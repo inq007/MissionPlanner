@@ -686,6 +686,7 @@
             // 
             resources.ApplyResources(this.txtFFMPEG, "txtFFMPEG");
             this.txtFFMPEG.Name = "txtFFMPEG";
+            this.txtFFMPEG.TextChanged += new System.EventHandler(this.txtFFMPEG_TextChanged);
             // 
             // label8
             // 
@@ -697,11 +698,13 @@
             resources.ApplyResources(this.myButton2, "myButton2");
             this.myButton2.Name = "myButton2";
             this.myButton2.UseVisualStyleBackColor = true;
+            this.myButton2.Click += new System.EventHandler(this.myButton2_Click);
             // 
             // txtVideoSave
             // 
             resources.ApplyResources(this.txtVideoSave, "txtVideoSave");
             this.txtVideoSave.Name = "txtVideoSave";
+            this.txtVideoSave.TextChanged += new System.EventHandler(this.txtVideoSave_TextChanged);
             // 
             // label7
             // 
@@ -713,11 +716,13 @@
             resources.ApplyResources(this.myButton1, "myButton1");
             this.myButton1.Name = "myButton1";
             this.myButton1.UseVisualStyleBackColor = true;
+            this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
             // 
             // txtUrl
             // 
             resources.ApplyResources(this.txtUrl, "txtUrl");
             this.txtUrl.Name = "txtUrl";
+            this.txtUrl.TextChanged += new System.EventHandler(this.txtUrl_TextChanged);
             // 
             // label6
             // 

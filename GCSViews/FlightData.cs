@@ -4609,9 +4609,11 @@ namespace MissionPlanner.GCSViews
         //Winky---------------------------------------------------
         private void ucPlayerControl1_Load(object sender, EventArgs e)
         {
-            if (Settings.Instance["StreamVideoURL"] != null)
+            if (MainV2.MediaStreamUrl != null)
             {
-                this.ucPlayerControl1.MediaUrl = Settings.Instance["StreamVideoURL"].ToString();
+                this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
+                this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
+                this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;
             }
             
         }

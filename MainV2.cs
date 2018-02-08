@@ -987,6 +987,14 @@ namespace MissionPlanner
 
             MainV2.comPort.MavChanged += comPort_MavChanged;
 
+
+            //Winky---------------------------
+            if (Settings.Instance["StreamVideoURL"] != null) MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"].ToString();
+            if (Settings.Instance["StreamVideoFFMPEG"] != null) MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"].ToString();
+            if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();
+            //-----------------------------
+
+
             // save config to test we have write access
             SaveConfig();
         }
@@ -3935,5 +3943,11 @@ namespace MissionPlanner
                 //);
             }
         }
+
+        //Winky---------------------------------
+        public static string MediaStreamUrl {get; set;}
+        public static string MediaStreamFFMPEG { get; set; }
+        public static string MediaStreamSaveDir { get; set; }
+
     }
 }

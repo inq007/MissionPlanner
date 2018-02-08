@@ -183,6 +183,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             txt_log_dir.Text = Settings.Instance.LogDir;
 
+            //Winky--------------------------------
+            txtUrl.Text = Settings.Instance["StreamVideoURL"].ToString();
+            txtFFMPEG.Text = Settings.Instance["StreamVideoFFMPEG"].ToString();
+            txtVideoSave.Text = Settings.Instance["VideoSaveDir"].ToString();
+            //-------------------------------------
+
+
             startup = false;
         }
 
@@ -956,13 +963,24 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             if (!string.IsNullOrEmpty(path) && System.IO.Directory.Exists(path))
             {
                 Settings.Instance["VideoSaveDir"] = path;
+                MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"];
             }
         }
 
         private void txtUrl_TextChanged(object sender, EventArgs e)
         {
             Settings.Instance["StreamVideoURL"] = txtUrl.Text;
-            // MainV2.setWinkys();
+            MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"];
+        }
+
+        private void txtFFMPEG_TextChanged(object sender, EventArgs e)
+        {
+            string path = txtFFMPEG.Text;
+            if (!string.IsNullOrEmpty(path) && System.IO.Directory.Exists(path))
+            {
+                Settings.Instance["StreamVideoFFMPEG"] = path;
+                MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"];
+            }
         }
     }
 }
