@@ -12,6 +12,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainH = new System.Windows.Forms.SplitContainer();
             this.SubMainLeft = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.hud1 = new MissionPlanner.Controls.HUD();
             this.contextMenuStripHud = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -25,6 +26,9 @@
             this.russianHudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swapWithMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
+            this.ucPlayerControl1 = new Player.ucPlayerControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.videoSwapWithMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlactions = new System.Windows.Forms.TabControl();
             this.contextMenuStripactionstab = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,8 +192,13 @@
             this.SubMainLeft.Panel1.SuspendLayout();
             this.SubMainLeft.Panel2.SuspendLayout();
             this.SubMainLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.contextMenuStripHud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabControlactions.SuspendLayout();
             this.contextMenuStripactionstab.SuspendLayout();
             this.tabQuick.SuspendLayout();
@@ -254,17 +263,31 @@
             // 
             // SubMainLeft.Panel1
             // 
-            this.SubMainLeft.Panel1.Controls.Add(this.hud1);
+            this.SubMainLeft.Panel1.Controls.Add(this.splitContainer2);
             // 
             // SubMainLeft.Panel2
             // 
             this.SubMainLeft.Panel2.Controls.Add(this.tabControlactions);
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.hud1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.ucPlayerControl1);
             // 
             // hud1
             // 
             this.hud1.airspeed = 0F;
             this.hud1.alt = 0F;
             this.hud1.AOA = 0F;
+            resources.ApplyResources(this.hud1, "hud1");
             this.hud1.BackColor = System.Drawing.Color.Black;
             this.hud1.batterylevel = 0F;
             this.hud1.batteryremaining = 0F;
@@ -317,7 +340,6 @@
             this.hud1.datetime = new System.DateTime(((long)(0)));
             this.hud1.displayAOASSA = false;
             this.hud1.disttowp = 0F;
-            resources.ApplyResources(this.hud1, "hud1");
             this.hud1.ekfstatus = 0F;
             this.hud1.failsafe = false;
             this.hud1.gpsfix = 0F;
@@ -440,6 +462,35 @@
             // bindingSourceHud
             // 
             this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // ucPlayerControl1
+            // 
+            this.ucPlayerControl1.AutoRecconect = false;
+            this.ucPlayerControl1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ucPlayerControl1.ContextMenuStrip = this.contextMenuStrip1;
+            resources.ApplyResources(this.ucPlayerControl1, "ucPlayerControl1");
+            this.ucPlayerControl1.ffmegParams = "";
+            this.ucPlayerControl1.ffmegPath = "";
+            this.ucPlayerControl1.MediaUrl = "";
+            this.ucPlayerControl1.Name = "ucPlayerControl1";
+            this.ucPlayerControl1.RecordPath = "";
+            this.ucPlayerControl1.VideoRate = Player.ucPlayerControl.ratelist.OriginalRate;
+            this.ucPlayerControl1.VisiblePlayerMenu = true;
+            this.ucPlayerControl1.VisibleStatus = true;
+            this.ucPlayerControl1.Load += new System.EventHandler(this.ucPlayerControl1_Load);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.videoSwapWithMapToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            // 
+            // videoSwapWithMapToolStripMenuItem
+            // 
+            this.videoSwapWithMapToolStripMenuItem.Name = "videoSwapWithMapToolStripMenuItem";
+            resources.ApplyResources(this.videoSwapWithMapToolStripMenuItem, "videoSwapWithMapToolStripMenuItem");
+            this.videoSwapWithMapToolStripMenuItem.Click += new System.EventHandler(this.videoSwapWithMapToolStripMenuItem_Click);
             // 
             // tabControlactions
             // 
@@ -2087,7 +2138,7 @@
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 180D;
+            this.windDir1.Direction = 360D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
@@ -2321,8 +2372,14 @@
             this.SubMainLeft.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SubMainLeft)).EndInit();
             this.SubMainLeft.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.contextMenuStripHud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabControlactions.ResumeLayout(false);
             this.contextMenuStripactionstab.ResumeLayout(false);
             this.tabQuick.ResumeLayout(false);
@@ -2548,5 +2605,9 @@
         private System.Windows.Forms.GroupBox groupBoxYaw;
         private System.Windows.Forms.GroupBox groupBoxPitch;
         private Controls.MyButton BUT_PayloadFolder;
+		private System.Windows.Forms.SplitContainer splitContainer2;															
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem videoSwapWithMapToolStripMenuItem;
+        public Player.ucPlayerControl ucPlayerControl1;						  
     }
 }

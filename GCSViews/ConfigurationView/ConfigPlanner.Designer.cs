@@ -100,7 +100,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CHK_AutoParamCommit = new System.Windows.Forms.CheckBox();
             this.chk_shownofly = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFFMPEG = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.myButton2 = new MissionPlanner.Controls.MyButton();
+            this.txtVideoSave = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.myButton1 = new MissionPlanner.Controls.MyButton();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label33
@@ -659,9 +669,65 @@
             this.chk_shownofly.UseVisualStyleBackColor = true;
             this.chk_shownofly.CheckedChanged += new System.EventHandler(this.chk_shownofly_CheckedChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtFFMPEG);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.myButton2);
+            this.panel1.Controls.Add(this.txtVideoSave);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.myButton1);
+            this.panel1.Controls.Add(this.txtUrl);
+            this.panel1.Controls.Add(this.label6);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // txtFFMPEG
+            // 
+            resources.ApplyResources(this.txtFFMPEG, "txtFFMPEG");
+            this.txtFFMPEG.Name = "txtFFMPEG";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // myButton2
+            // 
+            resources.ApplyResources(this.myButton2, "myButton2");
+            this.myButton2.Name = "myButton2";
+            this.myButton2.UseVisualStyleBackColor = true;
+            // 
+            // txtVideoSave
+            // 
+            resources.ApplyResources(this.txtVideoSave, "txtVideoSave");
+            this.txtVideoSave.Name = "txtVideoSave";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // myButton1
+            // 
+            resources.ApplyResources(this.myButton1, "myButton1");
+            this.myButton1.Name = "myButton1";
+            this.myButton1.UseVisualStyleBackColor = true;
+            // 
+            // txtUrl
+            // 
+            resources.ApplyResources(this.txtUrl, "txtUrl");
+            this.txtUrl.Name = "txtUrl";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
             // ConfigPlanner
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.chk_shownofly);
             this.Controls.Add(this.CHK_AutoParamCommit);
             this.Controls.Add(this.label5);
@@ -737,6 +803,8 @@
             resources.ApplyResources(this, "$this");
             this.Load += new System.EventHandler(this.ConfigPlanner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,5 +883,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox CHK_AutoParamCommit;
         private System.Windows.Forms.CheckBox chk_shownofly;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtFFMPEG;
+        private System.Windows.Forms.Label label8;
+        private Controls.MyButton myButton2;
+        private System.Windows.Forms.TextBox txtVideoSave;
+        private System.Windows.Forms.Label label7;
+        private Controls.MyButton myButton1;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Label label6;
     }
 }

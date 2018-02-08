@@ -77,6 +77,9 @@
     <Reference Include="OpenTK.GLControl">
       <HintPath>ExtLibs\OpenTK.GLControl.dll</HintPath>
     </Reference>
+    <Reference Include="Player.StreamPlayerControl">
+      <HintPath>StreamPlayerControl\Player.StreamPlayerControl.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Management" />
     <Reference Include="System.Speech">

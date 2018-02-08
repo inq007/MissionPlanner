@@ -930,5 +930,39 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         {
             Settings.Instance["ShowNoFly"] = chk_shownofly.Checked.ToString();
         }
+
+        //Winky----------------------------------------------------------------
+        private void myButton1_Click(object sender, EventArgs e)
+        {
+            var ofd = new FolderBrowserDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtVideoSave.Text = ofd.SelectedPath;
+            }
+        }
+
+        private void myButton2_Click(object sender, EventArgs e)
+        {
+            var ofd = new FolderBrowserDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtFFMPEG.Text = ofd.SelectedPath;
+            }
+        }
+
+        private void txtVideoSave_TextChanged(object sender, EventArgs e)
+        {
+            string path = txtVideoSave.Text;
+            if (!string.IsNullOrEmpty(path) && System.IO.Directory.Exists(path))
+            {
+                Settings.Instance["VideoSaveDir"] = path;
+            }
+        }
+
+        private void txtUrl_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Instance["StreamVideoURL"] = txtUrl.Text;
+            // MainV2.setWinkys();
+        }
     }
 }
