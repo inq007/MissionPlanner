@@ -2264,6 +2264,13 @@ namespace MissionPlanner.GCSViews
             {
                 modifyandSetLoiterRad.Enabled = false;
             }
+
+            if (MainV2.MediaStreamUrl != null)
+            {
+                this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
+                this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
+                this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;
+            }
         }
         
 
