@@ -1944,7 +1944,8 @@ namespace MissionPlanner.Controls
 
                 // xtrack error
                 // center
-
+                // Disable xtrack display on HUD left upper corner
+                displayxtrack = false;
                 if (displayxtrack)
                 {
                     float xtspace = this.Width / 10.0f / 3.0f;
