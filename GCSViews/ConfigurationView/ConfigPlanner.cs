@@ -187,6 +187,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             txtUrl.Text = Settings.Instance["StreamVideoURL"].ToString();
             txtFFMPEG.Text = Settings.Instance["StreamVideoFFMPEG"].ToString();
             txtVideoSave.Text = Settings.Instance["VideoSaveDir"].ToString();
+            checkBox1.Checked = Settings.Instance.GetBoolean("StreamVideoAutoConnect");
             //-------------------------------------
 
 
@@ -982,5 +983,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"];
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            MainV2.MediaStreamAutoconnect = checkBox1.Checked;
+            Settings.Instance["StreamVideoAutoConnect"] = checkBox1.Checked.ToString();
+        }
+
+        //-------------------------------------------------------------------
     }
 }

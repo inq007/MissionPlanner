@@ -2265,14 +2265,42 @@ namespace MissionPlanner.GCSViews
                 modifyandSetLoiterRad.Enabled = false;
             }
 
+            //Winky----------------------------------------------------
             if (MainV2.MediaStreamUrl != null)
             {
                 this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
                 this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
                 this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;
+                UpdateStreamWindowStatus(MainV2.MediaStreamConnect);              
+            }
+            //---------------------------------------------------------
+        }
+
+        //Winky----------------------------------------------------
+        public void UpdateStreamWindowStatus(bool status)
+        {
+            if (MainV2.MediaStreamUrl != null)
+            {
+                if (status)
+                {
+                    this.ucPlayerControl1.Play();
+                    if (MainV2.MediaStreamAutoconnect)
+                    {                        
+                        this.ucPlayerControl1.StartRecording();
+                    }
+                }
+                else
+                {
+                    if (this.ucPlayerControl1.IsRecording)
+                    {
+                        ucPlayerControl1.StopRecording();                       
+                    }
+                    this.ucPlayerControl1.Stop();
+                }
             }
         }
-        
+         //---------------------------------------------------------
+
 
         void cam_camimage(Image camimage)
         {
@@ -4592,18 +4620,17 @@ namespace MissionPlanner.GCSViews
         }
 
         //Winky---------------------------------------------------
-        public void ucPlayerControl1_Load(object sender, EventArgs e)
+        private void ucPlayerControl1_Load(object sender, EventArgs e)
         {
             if (MainV2.MediaStreamUrl != null)
             {
                 this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
                 this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
                 this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;
-                this.ucPlayerControl1.Play();
-                this.ucPlayerControl1.StartRecording(MainV2.MediaStreamSaveDir, "MV03vid");
-            }
-            
-        }
+               // this.ucPlayerControl1.Play();
+               // this.ucPlayerControl1.StartRecording(MainV2.MediaStreamSaveDir, "MV03vid");
+            }            
+        }        
 
         private void videoSwapWithMapToolStripMenuItem_Click(object sender, EventArgs e)
         {

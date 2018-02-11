@@ -101,6 +101,7 @@
             this.CHK_AutoParamCommit = new System.Windows.Forms.CheckBox();
             this.chk_shownofly = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtFFMPEG = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.myButton2 = new MissionPlanner.Controls.MyButton();
@@ -109,7 +110,6 @@
             this.myButton1 = new MissionPlanner.Controls.MyButton();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -684,6 +684,13 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // txtFFMPEG
             // 
             resources.ApplyResources(this.txtFFMPEG, "txtFFMPEG");
@@ -730,14 +737,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ConfigPlanner
             // 

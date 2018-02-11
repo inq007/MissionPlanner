@@ -992,11 +992,12 @@ namespace MissionPlanner
 
             if (Settings.Instance["StreamVideoURL"] != null) MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"].ToString();
             if (Settings.Instance["StreamVideoFFMPEG"] != null) MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"].ToString();
-            if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();            
+            if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();
+            if (Settings.Instance["StreamVideoAutoConnect"] != null) MainV2.MediaStreamAutoconnect = Settings.Instance.GetBoolean("StreamVideoAutoConnect");
             //-----------------------------
 
 
-            // save config to test we have write access
+                // save config to test we have write access
             SaveConfig();
         }
 
@@ -2211,7 +2212,13 @@ namespace MissionPlanner
                             this.MenuConnect.Text = Strings.DISCONNECTc;
                             _connectionControl.IsConnected(true);
                         });
+                        //Winky---------------------------
+                        MainV2.MediaStreamConnect = true;
+                        FlightData.UpdateStreamWindowStatus(true);
+                        //--------------------------------
                     }
+
+
                 }
                 else
                 {
@@ -2228,7 +2235,12 @@ namespace MissionPlanner
                                 _connectionStats.StopUpdates();
                             }
                         });
+                        //Winky---------------------------
+                        MainV2.MediaStreamConnect = false;
+                        FlightData.UpdateStreamWindowStatus(false);
+                        //--------------------------------
                     }
+
 
                     if (comPort.logreadmode)
                     {
@@ -3949,6 +3961,8 @@ namespace MissionPlanner
         public static string MediaStreamUrl {get; set;}
         public static string MediaStreamFFMPEG { get; set; }
         public static string MediaStreamSaveDir { get; set; }
+        public static bool MediaStreamAutoconnect { get; set; }
+        public static bool MediaStreamConnect { get; set; }
 
     }
 }
