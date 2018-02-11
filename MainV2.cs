@@ -989,9 +989,10 @@ namespace MissionPlanner
 
 
             //Winky---------------------------
+
             if (Settings.Instance["StreamVideoURL"] != null) MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"].ToString();
             if (Settings.Instance["StreamVideoFFMPEG"] != null) MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"].ToString();
-            if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();
+            if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();            
             //-----------------------------
 
 

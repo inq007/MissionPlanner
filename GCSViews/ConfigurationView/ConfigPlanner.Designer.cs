@@ -109,6 +109,7 @@
             this.myButton1 = new MissionPlanner.Controls.MyButton();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -671,6 +672,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.txtFFMPEG);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.myButton2);
@@ -728,6 +730,14 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ConfigPlanner
             // 
@@ -897,5 +907,6 @@
         private Controls.MyButton myButton1;
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

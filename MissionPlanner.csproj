@@ -179,6 +179,7 @@
       <Project>{cf402948-a3f4-4962-8a57-e40b46759d25}</Project>
       <Name>solo</Name>
     </ProjectReference>
+    <ProjectReference Include="ExtLibs\StreamPlayerControl\StreamPlayerControl.csproj" />
     <ProjectReference Include="ExtLibs\tlogThumbnailHandler\tlogThumbnailHandler.csproj">
       <Project>{aba78b2e-77c3-4377-8568-9542ac227971}</Project>
       <Name>tlogThumbnailHandler</Name>

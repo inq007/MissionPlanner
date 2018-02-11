@@ -479,6 +479,7 @@
             this.ucPlayerControl1.VideoRate = Player.ucPlayerControl.ratelist.OriginalRate;
             this.ucPlayerControl1.VisiblePlayerMenu = true;
             this.ucPlayerControl1.VisibleStatus = true;
+            this.ucPlayerControl1.Load += new System.EventHandler(this.ucPlayerControl1_Load);
             // 
             // contextMenuStrip1
             // 
