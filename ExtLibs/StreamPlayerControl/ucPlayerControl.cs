@@ -172,7 +172,7 @@ namespace Player
             {
                 process.Kill();
             }
-            proc.StartInfo.FileName = ffmpeg_path==""?"ffmpeg": ffmpeg_path;
+            proc.StartInfo.FileName = ffmpeg_path == "" ? "ffmpeg" : ffmpeg_path + "\\ffmpeg.exe";
             proc.StartInfo.Arguments = ffmpeg_params;
             proc.StartInfo.RedirectStandardError = false;
             proc.StartInfo.UseShellExecute = false;
@@ -199,7 +199,7 @@ namespace Player
             {
                 process.Kill();
             }
-            proc.StartInfo.FileName = ffmpeg_path == "" ? "ffmpeg" : ffmpeg_path;
+            proc.StartInfo.FileName = ffmpeg_path == "" ? "ffmpeg" : ffmpeg_path + "\\ffmpeg.exe";
             proc.StartInfo.Arguments = ffmpeg_params;
             proc.StartInfo.RedirectStandardError = false;
             proc.StartInfo.UseShellExecute = false;
@@ -227,7 +227,7 @@ namespace Player
             {
                 process.Kill();
             }
-            proc.StartInfo.FileName = ffmpeg_path == "" ? "ffmpeg" : ffmpeg_path;
+            proc.StartInfo.FileName = ffmpeg_path == "" ? "ffmpeg" : ffmpeg_path + "\\ffmpeg.exe";
 
 
             if (ffmpeg_params == "")
