@@ -2106,6 +2106,8 @@ namespace MissionPlanner.Controls
 
                     // extra text data
 
+                    //Remove Airspeed display (we are flying copters, no need for AirSpeed data
+                    /*
                     if (_lowairspeed)
                     {
                         drawstring(graphicsObject, HUDT.AS + _airspeed.ToString("0.0"), font, fontsize,
@@ -2116,7 +2118,7 @@ namespace MissionPlanner.Controls
                         drawstring(graphicsObject, HUDT.AS + _airspeed.ToString("0.0"), font, fontsize, _whiteBrush, 1,
                             scrollbg.Bottom + 5);
                     }
-
+                    */
                     if (_lowgroundspeed)
                     {
                         drawstring(graphicsObject, HUDT.GS + _groundspeed.ToString("0.0"), font, fontsize,
