@@ -4634,15 +4634,15 @@ namespace MissionPlanner.GCSViews
         {
             MainH.Panel2.SuspendLayout();
 
-            if (this.splitContainer2.Panel2.Controls.Contains(ucPlayerControl1))
+            if (this.splitContainer2.Panel1.Controls.Contains(ucPlayerControl1))
             {
                 MainH.Panel2.Controls.Add(ucPlayerControl1);
-                splitContainer2.Panel2.Controls.Add(tableMap);
+                splitContainer2.Panel1.Controls.Add(tableMap);
             }
             else
             {
                 MainH.Panel2.Controls.Add(tableMap);
-                splitContainer2.Panel2.Controls.Add(ucPlayerControl1);
+                splitContainer2.Panel1.Controls.Add(ucPlayerControl1);
             }
 
             MainH.Panel2.ResumeLayout();
