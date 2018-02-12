@@ -183,11 +183,17 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             txt_log_dir.Text = Settings.Instance.LogDir;
 
-            //Winky--------------------------------
-            txtUrl.Text = Settings.Instance["StreamVideoURL"].ToString();
-            txtFFMPEG.Text = Settings.Instance["StreamVideoFFMPEG"].ToString();
-            txtVideoSave.Text = Settings.Instance["VideoSaveDir"].ToString();
+            //Winky-------------------------------- & Bandi
+            txtUrl.Text = "";
+            txtFFMPEG.Text = "";
+            txtVideoSave.Text = "";
+            checkBox1.Checked = false;
+
+            if (Settings.Instance["StreamVideoURL"] != null) txtUrl.Text = Settings.Instance["StreamVideoURL"].ToString();
+            if (Settings.Instance["StreamVideoFFMPEG"] != null) txtFFMPEG.Text = Settings.Instance["StreamVideoFFMPEG"].ToString();
+            if (Settings.Instance["VideoSaveDir"] != null) Settings.Instance["VideoSaveDir"].ToString();
             checkBox1.Checked = Settings.Instance.GetBoolean("StreamVideoAutoConnect");
+
             //-------------------------------------
 
 

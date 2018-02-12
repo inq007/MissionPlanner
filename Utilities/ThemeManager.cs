@@ -40,6 +40,7 @@ namespace MissionPlanner.Utilities
             HighContrast,
             Test,
             Custom,
+            Rotors,
         }
 
         // Initialize to the default theme (BurntKermit)
@@ -117,6 +118,11 @@ namespace MissionPlanner.Utilities
 
                 case Themes.Custom:
                     ApplyCustomTheme(control, 0);
+                    break;
+
+                case Themes.Rotors:
+                    SetRotorsColours();
+                    ApplyTheme(control, 0);
                     break;
 
                 default:
@@ -784,6 +790,59 @@ mc:Ignorable=""d""
                 BSE.Windows.Forms.Panel waypointsPanel = MainV2.instance.FlightPlanner.panelWaypoints;
 
                 actionPanel.CustomColors.BorderColor = Color.Black;       //these statements control the colours of the actions panel in the flight planner window
+                actionPanel.CustomColors.CaptionGradientBegin = ButBG;
+                actionPanel.CustomColors.CaptionGradientEnd = ButBGBot;
+                actionPanel.CustomColors.CaptionText = ButtonTextColor;
+                actionPanel.CustomColors.CollapsedCaptionText = ButtonTextColor;
+
+                waypointsPanel.CustomColors.BorderColor = Color.Black;    //these statements control the colours of the Waypoints panel in the flight planner window
+                waypointsPanel.CustomColors.CaptionGradientBegin = ButBG;
+                waypointsPanel.CustomColors.CaptionGradientEnd = ButBGBot;
+                waypointsPanel.CustomColors.CaptionText = ButtonTextColor;
+                waypointsPanel.CustomColors.CollapsedCaptionText = ButtonTextColor;
+            }
+
+            if (MainV2.instance != null)
+            {
+                MainV2.instance.switchicons(new MainV2.burntkermitmenuicons());
+            }
+
+            MainV2.TerminalTheming = true;
+            Settings.Instance["terminaltheming"] = true.ToString();
+        }
+        private static void SetRotorsColours()
+        {
+
+            BGColor = Color.FromArgb(0x26, 0x27, 0x28);                     // This changes the colour of the main menu background
+            ControlBGColor = Color.FromArgb(0x43, 0x44, 0x45);              // This changes the colour of the sub menu backgrounds
+            TextColor = Color.White;                                        // This changes the colour of text
+            BGColorTextBox = Color.FromArgb(0x43, 0x44, 0x45);              // This changes the colour of the background of textboxes
+            ButtonTextColor = Color.FromArgb(64, 87, 4);                    // This changes the colour of button text
+            ButBG = Color.FromArgb(148, 193, 31);                           // This changes the colour of button backgrounds (Top)
+            ButBGBot = Color.FromArgb(205, 226, 150);                       // This changes the colour of button backgrounds (Bot)
+            ProgressBarColorTop = Color.FromArgb(102, 139, 26);             // These three variables change the colours of progress bars
+            ProgressBarColorBot = Color.FromArgb(124, 164, 40);
+            ProgressBarOutlineColor = Color.FromArgb(150, 174, 112);
+            BannerColor1 = Color.FromArgb(0x40, 0x57, 0x04);                // These two variables change the colours of banners such as "planner" umder configuration
+            BannerColor2 = Color.FromArgb(0x94, 0xC1, 0x1F);
+            ColorNotEnabled = Color.FromArgb(150, 43, 58, 3);               // This changes the background color of buttons when not enabled
+            ColorMouseOver = Color.FromArgb(73, 43, 58, 3);                 // This changes the background color of buttons when the mouse is hovering over a button
+            ColorMouseDown = Color.FromArgb(73, 43, 58, 3);                 // This changes the background color of buttons when the mouse is clicked down on a button
+            CurrentPPMBackground = Color.Green;                             // This changes the background colour of the current PPM setting in the flight modes tab
+            ZedGraphChartFill = Color.FromArgb(0x1F, 0x1F, 0x20);           // These three variables change the fill colours of Zed Graphs
+            ZedGraphPaneFill = Color.FromArgb(0x37, 0x37, 0x38);
+            ZedGraphLegendFill = Color.FromArgb(0x85, 0x84, 0x83);
+            RTBForeColor = Color.WhiteSmoke;                                // This changes the colour of text in rich text boxes
+            BSVButtonAreaBGColor = Color.Black;                             // This changes the colour of a backstageview button area
+            UnselectedTextColour = Color.WhiteSmoke;                        // This changes the colour of unselected text in a BSV button
+            HorizontalPBValueColor = Color.FromArgb(148, 193, 31);          // This changes the colour of the horizontal progressbar
+
+            if (MainV2.instance != null && MainV2.instance.FlightPlanner != null)
+            {
+                BSE.Windows.Forms.Panel actionPanel = MainV2.instance.FlightPlanner.panelAction;
+                BSE.Windows.Forms.Panel waypointsPanel = MainV2.instance.FlightPlanner.panelWaypoints;
+
+                actionPanel.CustomColors.BorderColor = Color.DarkBlue;       //these statements control the colours of the actions panel in the flight planner window
                 actionPanel.CustomColors.CaptionGradientBegin = ButBG;
                 actionPanel.CustomColors.CaptionGradientEnd = ButBGBot;
                 actionPanel.CustomColors.CaptionText = ButtonTextColor;
