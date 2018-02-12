@@ -1635,8 +1635,12 @@ namespace MissionPlanner.Controls
                     if (bg.Height != 0)
                     {
                         using (
+//                            LinearGradientBrush linearBrush = new LinearGradientBrush(
+//                                bg, Color.FromArgb(0x9b, 0xb8, 0x24), Color.FromArgb(0x41, 0x4f, 0x07),
+//                                LinearGradientMode.Vertical))
+                            //Changed ground color in HUD to brown
                             LinearGradientBrush linearBrush = new LinearGradientBrush(
-                                bg, Color.FromArgb(0x9b, 0xb8, 0x24), Color.FromArgb(0x41, 0x4f, 0x07),
+                                bg, Color.FromArgb(0xb5, 0x6c, 0x2d), Color.FromArgb(0x75, 0x3e, 0x0f),
                                 LinearGradientMode.Vertical))
                         {
                             graphicsObject.FillRectangle(linearBrush, bg);
