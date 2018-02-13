@@ -2951,9 +2951,9 @@ namespace MissionPlanner
                         ;
             };
 
-            ZeroConf.EnumerateAllServicesFromAllHosts();
+            //ZeroConf.EnumerateAllServicesFromAllHosts();
 
-            ZeroConf.ProbeForRTSP();
+            //ZeroConf.ProbeForRTSP();
 
             CommsSerialScan.doConnect += port =>
             {
