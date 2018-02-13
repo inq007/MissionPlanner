@@ -3030,6 +3030,9 @@ namespace MissionPlanner
                 System.Configuration.ConfigurationManager.AppSettings["BetaUpdateLocationVersion"] = "";
             }
 
+            //Remove MP update check
+            /*
+
             try
             {
                 // single update check per day - in a seperate thread
@@ -3048,6 +3051,7 @@ namespace MissionPlanner
             {
                 log.Error("Update check failed", ex);
             }
+            */
 
             // play a tlog that was passed to the program/ load a bin log passed
             if (Program.args.Length > 0)
