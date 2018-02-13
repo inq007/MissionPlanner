@@ -152,7 +152,10 @@ namespace MissionPlanner.GCSViews
             }
 
             var opt = AddBackstageViewPage(typeof(ConfigOptional), rm.GetString("backstageViewPageopt.Text"));
-            AddBackstageViewPage(typeof(ConfigGPSInject), "RTK/GPS Inject", true, opt);
+            if (MainV2.DisplayConfiguration.displayGPSRTK)
+            {
+                AddBackstageViewPage(typeof(ConfigGPSInject), "RTK/GPS Inject", true, opt);
+            }
             if (MainV2.DisplayConfiguration.displaySikRadio)
             {
                 AddBackstageViewPage(typeof(Sikradio), rm.GetString("backstageViewPageSikradio.Text"), true, opt);
@@ -218,9 +221,10 @@ namespace MissionPlanner.GCSViews
             {
                 AddBackstageViewPage(typeof(Antenna.Tracker), "Antenna Tracker", true, opt);
             }
-
-            AddBackstageViewPage(typeof(ConfigFFT), "FFT Setup", isConnected, opt);
-
+            if (MainV2.DisplayConfiguration.displayFFT)
+            {
+                AddBackstageViewPage(typeof(ConfigFFT), "FFT Setup", isConnected, opt);
+            }
             // remeber last page accessed
             foreach (BackstageViewPage page in backstageView.Pages)
             {

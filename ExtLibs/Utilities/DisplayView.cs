@@ -78,6 +78,8 @@ namespace MissionPlanner.Utilities
         public Boolean displayParachute { get; set; }
         public Boolean displayEsp { get; set; }
         public Boolean displayAntennaTracker { get; set; }
+        public Boolean displayFFT { get; set; }
+        public Boolean displayGPSRTK { get; set; }
 
 
         //config tuning
@@ -157,6 +159,8 @@ namespace MissionPlanner.Utilities
             displayParachute = true;
             displayEsp = true;
             displayAntennaTracker = true;
+            displayFFT = true;
+            displayGPSRTK = true;
 
 
             //config tuning
@@ -265,10 +269,12 @@ namespace MissionPlanner.Utilities
                 displayParachute = true,
                 displayEsp = true,
                 displayAntennaTracker = true,
+                displayFFT = true,
+                displayGPSRTK = true,
 
 
-                //config tuning
-                displayBasicTuning = true,
+            //config tuning
+            displayBasicTuning = true,
                 displayExtendedTuning = true,
                 displayStandardParams = true,
                 displayAdvancedParams = false,
@@ -298,23 +304,23 @@ namespace MissionPlanner.Utilities
                 displayQuickTab = true,
                 displayPreFlightTab = false,
                 displayAdvActionsTab = false,
-                displaySimpleActionsTab = true,
-                displayGaugesTab = true,
+                displaySimpleActionsTab = false,
+                displayGaugesTab = false,
                 displayStatusTab = false,
                 displayServoTab = false,
                 displayScriptsTab = false,
-                displayTelemetryTab = true,
-                displayDataflashTab = true,
+                displayTelemetryTab = false,
+                displayDataflashTab = false,
                 displayMessagesTab = true,
 
                 //flight plan
-                displayRallyPointsMenu = true,
-                displayGeoFenceMenu = true,
-                displaySplineCircleAutoWp = true,
-                displayCircleSurveyAutoWp = true,
-                displayTextAutoWp = true,
-                displayPoiMenu = true,
-                displayTrackerHomeMenu = true,
+                displayRallyPointsMenu = false,
+                displayGeoFenceMenu = false,
+                displaySplineCircleAutoWp = false,
+                displayCircleSurveyAutoWp = false,
+                displayTextAutoWp = false,
+                displayPoiMenu = false,
+                displayTrackerHomeMenu = false,
                 displayCheckHeightBox = true,
                 displayPluginAutoWp = true,
 
@@ -322,33 +328,36 @@ namespace MissionPlanner.Utilities
                 displayInstallFirmware = false,
                 displayWizard = false,
                 displayFrameType = false,
-                displayAccelCalibration = true,
+                displayAccelCalibration = false,
                 displayCompassConfiguration = true,
-                displayRadioCalibration = true,
-                displayEscCalibration = true,
-                displayFlightModes = true,
-                displayFailSafe = true,
+                displayRadioCalibration = false,
+                displayEscCalibration = false,
+                displayFlightModes = false,
+                displayFailSafe = false,
                 displaySikRadio = false,
-                displayBattMonitor = true,
-                displayUAVCAN = true,
-                displayCompassMotorCalib = true,
-                displayRangeFinder = true,
-                displayAirSpeed = true,
-                displayPx4Flow = true,
-                displayOpticalFlow = true,
-                displayOsd = true,
-                displayCameraGimbal = true,
-                displayMotorTest = true,
-                displayBluetooth = true,
-                displayParachute = true,
-                displayEsp = true,
-                displayAntennaTracker = true,
+                displayBattMonitor = false,
+                displayUAVCAN = false,
+                displayCompassMotorCalib = false,
+                displayRangeFinder = false,
+                displayAirSpeed = false,
+                displayPx4Flow = false,
+                displayOpticalFlow = false,
+                displayOsd = false,
+                displayCameraGimbal = false,
+                displayMotorTest = false,
+                displayBluetooth = false,
+                displayParachute = false,
+                displayEsp = false,
+                displayAntennaTracker = false,
+                displayFFT = false,
+                displayGPSRTK = false,
+
 
 
                 //config tuning
-                displayBasicTuning = true,
-                displayExtendedTuning = true,
-                displayStandardParams = true,
+                displayBasicTuning = false,
+                displayExtendedTuning = false,
+                displayStandardParams = false,
                 displayAdvancedParams = false,
                 displayFullParamList = false,
                 displayFullParamTree = false,
@@ -421,6 +430,9 @@ namespace MissionPlanner.Utilities
                 displayParachute = true,
                 displayEsp = true,
                 displayAntennaTracker = true,
+                displayFFT = true,
+                displayGPSRTK = true,
+
 
 
                 //config tuning

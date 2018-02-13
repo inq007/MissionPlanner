@@ -44,6 +44,10 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             {
                 CMB_Layout.SelectedIndex = 0;
             }
+            else if (MainV2.DisplayConfiguration.displayName == DisplayNames.Operator)
+            {
+                CMB_Layout.SelectedIndex = 2;
+            }
             else
             {
                 CMB_Layout.SelectedIndex = 0;
@@ -937,6 +941,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             {
                 MainV2.DisplayConfiguration = MainV2.DisplayConfiguration.Operator();
             }
+
             Settings.Instance["displayview"] = MainV2.DisplayConfiguration.ConvertToString();
         }
 
