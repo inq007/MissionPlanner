@@ -282,6 +282,13 @@ namespace MissionPlanner.GCSViews
             log.Info("Graph Setup");
             CreateChart(zg1);
 
+            //Disable wind direction and distanceBar
+            windDir1.Visible = false;
+            distanceBar1.Visible = false;
+            distanceBar1.Enabled = false;
+
+
+
             // config map      
             log.Info("Map Setup");
             //change gmapcache directrory location to the Application folder
