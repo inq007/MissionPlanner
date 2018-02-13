@@ -25,6 +25,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             InitializeComponent();
             CMB_Layout.Items.Add(DisplayNames.Basic);
             CMB_Layout.Items.Add(DisplayNames.Advanced);
+            CMB_Layout.Items.Add(DisplayNames.Operator);
 
             txt_log_dir.TextChanged += OnLogDirTextChanged;
 
@@ -921,7 +922,7 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         {
             new Utilities.AltitudeAngel.AASettings().Show(this);
         }
-
+        //Add our own display configuration to here.
         private void CMB_Layout_SelectedIndexChanged(object sender, EventArgs e)
         {
             if ((DisplayNames)CMB_Layout.SelectedItem == DisplayNames.Advanced)
@@ -931,6 +932,10 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             else if ((DisplayNames)CMB_Layout.SelectedItem == DisplayNames.Basic)
             {
                 MainV2.DisplayConfiguration = MainV2.DisplayConfiguration.Basic();
+            }
+            else if ((DisplayNames)CMB_Layout.SelectedItem == DisplayNames.Operator)
+            {
+                MainV2.DisplayConfiguration = MainV2.DisplayConfiguration.Operator();
             }
             Settings.Instance["displayview"] = MainV2.DisplayConfiguration.ConvertToString();
         }

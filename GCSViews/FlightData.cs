@@ -186,6 +186,11 @@ namespace MissionPlanner.GCSViews
             // populate the unmodified base list
             tabControlactions.TabPages.ForEach(i => { TabListOriginal.Add((TabPage)i); });
 
+
+            //tabControlactions.Controls.Remove(tabActionsSimple);
+            //tabControlactions.Controls.Remove(tabPagePreFlight);
+
+
             //  mymap.Manager.UseMemoryCache = false;
 
             log.Info("Tunning Graph Settings");
@@ -279,8 +284,16 @@ namespace MissionPlanner.GCSViews
 
             // config map      
             log.Info("Map Setup");
-            gMapControl1.CacheLocation = Settings.GetDataDirectory() +
-                                         "gmapcache" + Path.DirectorySeparatorChar;
+            //change gmapcache directrory location to the Application folder
+            //            gMapControl1.CacheLocation = Settings.GetRunningDirectory() +
+            //                                         "gmapcache" + Path.DirectorySeparatorChar;
+
+                        gMapControl1.CacheLocation = Settings.GetDataDirectory() +
+                                                     "gmapcache" + Path.DirectorySeparatorChar;
+
+            //Set gmap to cache only
+            gMapControl1.Manager.Mode = GMap.NET.AccessMode.CacheOnly;
+
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
             gMapControl1.Zoom = 3;
