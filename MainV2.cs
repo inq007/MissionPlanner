@@ -2847,6 +2847,8 @@ namespace MissionPlanner
 
             this.SuspendLayout();
 
+            /*
+
             // setup http server
             try
             {
@@ -2863,7 +2865,7 @@ namespace MissionPlanner
                 log.Error("Error starting TCP listener thread: ", ex);
                 CustomMessageBox.Show(ex.ToString());
             }
-
+            */
             log.Info("start joystick");
             // setup joystick packet sender
             joystickthread = new Thread(new ThreadStart(joysticksend))
@@ -2896,7 +2898,7 @@ namespace MissionPlanner
 
             ThreadPool.QueueUserWorkItem(BGLoadAirports);
 
-            ThreadPool.QueueUserWorkItem(BGCreateMaps);
+            //ThreadPool.QueueUserWorkItem(BGCreateMaps);
 
             //ThreadPool.QueueUserWorkItem(BGGetAlmanac);
 
@@ -2904,7 +2906,7 @@ namespace MissionPlanner
 
             ThreadPool.QueueUserWorkItem(BGNoFly);
 
-            ThreadPool.QueueUserWorkItem(BGGetKIndex);
+            //ThreadPool.QueueUserWorkItem(BGGetKIndex);
 
             // update firmware version list - only once per day
             //ThreadPool.QueueUserWorkItem(BGFirmwareCheck);
