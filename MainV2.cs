@@ -2907,7 +2907,7 @@ namespace MissionPlanner
             ThreadPool.QueueUserWorkItem(BGGetKIndex);
 
             // update firmware version list - only once per day
-            ThreadPool.QueueUserWorkItem(BGFirmwareCheck);
+            //ThreadPool.QueueUserWorkItem(BGFirmwareCheck);
 
             log.Info("start udpvideoshim");
             // start listener
