@@ -2909,9 +2909,9 @@ namespace MissionPlanner
             // update firmware version list - only once per day
             //ThreadPool.QueueUserWorkItem(BGFirmwareCheck);
 
-            log.Info("start udpvideoshim");
+            //log.Info("start udpvideoshim");
             // start listener
-            UDPVideoShim.Start();
+            //UDPVideoShim.Start();
 
             //log.Info("start udpmavlinkshim");
             //UDPMavlinkShim.Start();
