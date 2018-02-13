@@ -2977,6 +2977,8 @@ namespace MissionPlanner
                 }
             };
 
+            //Disable ALtitude Angel check at first start
+            /*
             try
             {
                 log.Info("Load AltitudeAngel");
@@ -3005,6 +3007,9 @@ namespace MissionPlanner
             {
                 Tracking.AddException(ex);
             }
+            */
+
+
 
             this.ResumeLayout();
 
