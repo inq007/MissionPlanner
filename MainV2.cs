@@ -1565,6 +1565,7 @@ namespace MissionPlanner
                 }
 
                 // check for newer firmware
+                /*
                 var softwares = Firmware.LoadSoftwares();
 
                 if (softwares.Count > 0)
@@ -1600,7 +1601,7 @@ namespace MissionPlanner
                         log.Error(ex);
                     }
                 }
-
+                */
                 FlightData.CheckBatteryShow();
 
                 MissionPlanner.Utilities.Tracking.AddEvent("Connect", "Connect", comPort.MAV.cs.firmware.ToString(),
@@ -1755,7 +1756,7 @@ namespace MissionPlanner
 
             MainV2._connectionControl.UpdateSysIDS();
 
-            loadph_serial();
+            //loadph_serial();
         }
 
         void loadph_serial()
