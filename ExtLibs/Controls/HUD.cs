@@ -1783,6 +1783,8 @@ namespace MissionPlanner.Controls
                 }
 
                 // Flight Path vector
+                //Disable FLight Path vector
+                displayAOASSA = false;
                 if (displayAOASSA)
                 {
                     graphicsObject.DrawEllipse(this._redPen,
@@ -2321,6 +2323,8 @@ namespace MissionPlanner.Controls
                 }
 
                 // AOA
+                // Disable AOASSA
+                displayAOASSA = false;
                 if (displayAOASSA)
                 {
                     scrollbg = new Rectangle((int) (this.Width - (double) this.Width / 6), halfheight + halfheight / 10,
@@ -2642,6 +2646,7 @@ namespace MissionPlanner.Controls
         /// pen for drawstring
         /// </summary>
         private readonly Pen _p = new Pen(Color.FromArgb(0x26, 0x27, 0x28), 2f);
+        private readonly Pen _p_white = new Pen(Color.FromArgb(0x00, 0x00, 0x00), 1.5f);
 
         /// <summary>
         /// pth for drawstring
@@ -2700,7 +2705,15 @@ namespace MissionPlanner.Controls
 
                         gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                        gfx.DrawPath(this._p, pth);
+                        if (brush != Brushes.Red  )
+                        {
+                            gfx.DrawPath(this._p, pth);
+                        }
+                        else
+                        {
+                            gfx.DrawPath(this._p_white, pth);
+                        }
+
 
                         //Draw the face
 

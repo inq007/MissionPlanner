@@ -418,6 +418,15 @@ namespace MissionPlanner
             MenuTerminal.Visible = DisplayConfiguration.displayTerminal;
             MenuHelp.Visible = DisplayConfiguration.displayHelp;
             MenuDonate.Visible = DisplayConfiguration.displayDonate;
+
+            //Update icon visibilities
+            MenuSimulation.Visible = false;
+            MenuTerminal.Visible = false;
+            MenuHelp.Visible = false;
+            MenuDonate.Visible = false;
+
+
+
             MissionPlanner.Controls.BackstageView.BackstageView.Advanced = DisplayConfiguration.isAdvancedMode;
 
             if (Settings.Instance.GetBoolean("menu_autohide") != DisplayConfiguration.autoHideMenuForce)
