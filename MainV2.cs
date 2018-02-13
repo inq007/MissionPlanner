@@ -3133,6 +3133,9 @@ namespace MissionPlanner
                 }
             }
 
+
+            //Disable wizard check at all.
+            /*
             // show wizard on first use
             if (Settings.Instance["newuser"] == null)
             {
@@ -3147,6 +3150,7 @@ namespace MissionPlanner
 
                 Settings.Instance["newuser"] = DateTime.Now.ToShortDateString();
             }
+            */
         }
 
         private Dictionary<string, string> ProcessCommandLine(string[] args)
