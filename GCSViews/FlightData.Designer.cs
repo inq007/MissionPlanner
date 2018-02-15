@@ -469,15 +469,16 @@
             // 
             this.ucPlayerControl1.AutoRecconect = true;
             this.ucPlayerControl1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ucPlayerControl1.ContextMenuStrip = this.contextMenuStrip1;
             resources.ApplyResources(this.ucPlayerControl1, "ucPlayerControl1");
+            this.ucPlayerControl1.ContextMenuStrip = this.contextMenuStrip1;
             this.ucPlayerControl1.ffmegParams = "";
             this.ucPlayerControl1.ffmegPath = "";
+            this.ucPlayerControl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ucPlayerControl1.MediaUrl = "";
             this.ucPlayerControl1.Name = "ucPlayerControl1";
             this.ucPlayerControl1.RecordPath = "";
             this.ucPlayerControl1.VideoRate = Player.ucPlayerControl.ratelist.OriginalRate;
-            this.ucPlayerControl1.VisiblePlayerMenu = true;
+            this.ucPlayerControl1.VisiblePlayerMenu = false;
             this.ucPlayerControl1.VisibleStatus = true;
             this.ucPlayerControl1.Load += new System.EventHandler(this.ucPlayerControl1_Load);
             // 

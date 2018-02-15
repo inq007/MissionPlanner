@@ -96,6 +96,7 @@
     <Content Include="ffprobe.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\video_not_connected.png" />
     <None Include="Resources\record-5121.png" />
     <None Include="Resources\record-512.ico" />
     <None Include="Resources\stop-512.png" />
