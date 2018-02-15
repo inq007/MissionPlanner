@@ -437,6 +437,26 @@ namespace MissionPlanner
 
             autoHideToolStripMenuItem.Visible = !DisplayConfiguration.autoHideMenuForce;
 
+
+            // full screen
+            if (DisplayConfiguration.forceFullScreen)
+            {
+                this.TopMost = false;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.TopMost = false;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+            }
+
+
+
+
+
             //Flight data page
             if (MainV2.instance.FlightData != null)
             {

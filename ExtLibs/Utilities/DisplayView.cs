@@ -22,6 +22,9 @@ namespace MissionPlanner.Utilities
     {
         public DisplayNames displayName { get; set; }
 
+        //Min windows fullscreen
+        public Boolean forceFullScreen { get; set; }
+        
         //MainV2 buttons
         public Boolean displaySimulation { get; set; }
         public Boolean displayTerminal { get; set; }
@@ -101,7 +104,8 @@ namespace MissionPlanner.Utilities
             // default to basic.
             //also when a new field is added/created this defines the template for missing options
             displayName = DisplayNames.Basic;
-            
+
+            forceFullScreen = false;
 
             //MainV2 buttons
             displaySimulation = false;
@@ -213,6 +217,9 @@ namespace MissionPlanner.Utilities
             return new DisplayView()
             {
                 displayName = DisplayNames.Basic,
+
+                forceFullScreen = false,
+
                 //MainV2 buttons
                 displaySimulation = true,
                 displayTerminal = false,
@@ -293,6 +300,9 @@ namespace MissionPlanner.Utilities
             return new DisplayView()
             {
                 displayName = DisplayNames.Operator,
+
+                forceFullScreen = true,
+
                 //MainV2 buttons
                 displaySimulation = false,
                 displayTerminal = false,
@@ -374,6 +384,9 @@ namespace MissionPlanner.Utilities
             return new DisplayView()
             {
                 displayName = DisplayNames.Advanced,
+
+                forceFullScreen = false,
+
                 //MainV2 buttons
                 displaySimulation = true,
                 displayTerminal = true,

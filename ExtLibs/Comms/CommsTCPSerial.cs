@@ -103,6 +103,55 @@ namespace MissionPlanner.Comms
             set;
         }
 
+        //Open with predefined settings, no prompts
+
+        public void quickOpen(string strPort, string strHost)
+        {
+            try
+            {
+                inOpen = true;
+
+                if (client.Client.Connected)
+                {
+                    log.Warn("tcpserial socket already open");
+                    return;
+                }
+
+                string dest = strPort;
+                string host = strHost;
+
+                dest = OnSettings("TCP_port", dest);
+                host = OnSettings("TCP_host", host);
+
+                Port = dest;
+
+                log.InfoFormat("TCP Open {0} {1}", host, Port);
+
+                OnSettings("TCP_port", Port, true);
+                OnSettings("TCP_host", host, true);
+
+                client = new TcpClient(host, int.Parse(Port));
+
+                client.NoDelay = true;
+                client.Client.NoDelay = true;
+
+                VerifyConnected();
+
+                reconnectnoprompt = true;
+            }
+            catch
+            {
+                // disable if the first connect fails
+                autoReconnect = false;
+                throw;
+            }
+            finally
+            {
+                inOpen = false;
+            }
+        }
+
+
         public void Open()
         {
             try
