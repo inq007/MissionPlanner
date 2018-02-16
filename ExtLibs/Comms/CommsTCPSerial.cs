@@ -21,6 +21,13 @@ namespace MissionPlanner.Comms
         public int retrys = 3;
         DateTime lastReconnectTime = DateTime.MinValue;
         public bool autoReconnect = false;
+
+        public bool quickConnect { get; set; }
+        public string strHost { get; set; }
+        public string strPort { get; set; }
+
+
+
         private bool inOpen = false;
 
         bool reconnectnoprompt = false;
@@ -103,55 +110,6 @@ namespace MissionPlanner.Comms
             set;
         }
 
-        //Open with predefined settings, no prompts
-
-        public void quickOpen(string strPort, string strHost)
-        {
-            try
-            {
-                inOpen = true;
-
-                if (client.Client.Connected)
-                {
-                    log.Warn("tcpserial socket already open");
-                    return;
-                }
-
-                string dest = strPort;
-                string host = strHost;
-
-                dest = OnSettings("TCP_port", dest);
-                host = OnSettings("TCP_host", host);
-
-                Port = dest;
-
-                log.InfoFormat("TCP Open {0} {1}", host, Port);
-
-                OnSettings("TCP_port", Port, true);
-                OnSettings("TCP_host", host, true);
-
-                client = new TcpClient(host, int.Parse(Port));
-
-                client.NoDelay = true;
-                client.Client.NoDelay = true;
-
-                VerifyConnected();
-
-                reconnectnoprompt = true;
-            }
-            catch
-            {
-                // disable if the first connect fails
-                autoReconnect = false;
-                throw;
-            }
-            finally
-            {
-                inOpen = false;
-            }
-        }
-
-
         public void Open()
         {
             try
@@ -167,25 +125,33 @@ namespace MissionPlanner.Comms
                 string dest = Port;
                 string host = "127.0.0.1";
 
-                dest = OnSettings("TCP_port", dest);
-
-                host = OnSettings("TCP_host", host);
-
-                if (!reconnectnoprompt)
+                if (!quickConnect)
                 {
-                    if (inputboxreturn.Cancel == OnInputBoxShow("remote host",
-                            "Enter host name/ip (ensure remote end is already started)", ref host))
+
+                    dest = OnSettings("TCP_port", dest);
+
+                    host = OnSettings("TCP_host", host);
+
+                    if (!reconnectnoprompt)
                     {
-                        throw new Exception("Canceled by request");
-                    }
-                    if (inputboxreturn.Cancel == OnInputBoxShow("remote Port", "Enter remote port", ref dest))
-                    {
-                        throw new Exception("Canceled by request");
+                        if (inputboxreturn.Cancel == OnInputBoxShow("remote host",
+                                "Enter host name/ip (ensure remote end is already started)", ref host))
+                        {
+                            throw new Exception("Canceled by request");
+                        }
+                        if (inputboxreturn.Cancel == OnInputBoxShow("remote Port", "Enter remote port", ref dest))
+                        {
+                            throw new Exception("Canceled by request");
+                        }
                     }
                 }
+                else
+                {
+                    host = strHost;
+                    dest = strPort;
 
+                }
                 Port = dest;
-
                 log.InfoFormat("TCP Open {0} {1}", host, Port);
 
                 OnSettings("TCP_port", Port, true);

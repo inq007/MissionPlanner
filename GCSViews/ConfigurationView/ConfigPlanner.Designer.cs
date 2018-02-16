@@ -110,8 +110,15 @@
             this.myButton1 = new MissionPlanner.Controls.MyButton();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.panelQuickConnect = new System.Windows.Forms.Panel();
+            this.cbQuickConnect = new System.Windows.Forms.CheckBox();
+            this.txtHost = new System.Windows.Forms.TextBox();
+            this.lHost = new System.Windows.Forms.Label();
+            this.lPort = new System.Windows.Forms.Label();
+            this.txtPort = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelQuickConnect.SuspendLayout();
             this.SuspendLayout();
             // 
             // label33
@@ -738,9 +745,49 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
+            // panelQuickConnect
+            // 
+            this.panelQuickConnect.Controls.Add(this.txtPort);
+            this.panelQuickConnect.Controls.Add(this.lPort);
+            this.panelQuickConnect.Controls.Add(this.lHost);
+            this.panelQuickConnect.Controls.Add(this.txtHost);
+            this.panelQuickConnect.Controls.Add(this.cbQuickConnect);
+            resources.ApplyResources(this.panelQuickConnect, "panelQuickConnect");
+            this.panelQuickConnect.Name = "panelQuickConnect";
+            // 
+            // cbQuickConnect
+            // 
+            resources.ApplyResources(this.cbQuickConnect, "cbQuickConnect");
+            this.cbQuickConnect.Name = "cbQuickConnect";
+            this.cbQuickConnect.UseVisualStyleBackColor = true;
+            this.cbQuickConnect.CheckStateChanged += new System.EventHandler(this.cbQuickConnect_CheckedChanged);
+            // 
+            // txtHost
+            // 
+            resources.ApplyResources(this.txtHost, "txtHost");
+            this.txtHost.Name = "txtHost";
+            this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
+            // 
+            // lHost
+            // 
+            resources.ApplyResources(this.lHost, "lHost");
+            this.lHost.Name = "lHost";
+            // 
+            // lPort
+            // 
+            resources.ApplyResources(this.lPort, "lPort");
+            this.lPort.Name = "lPort";
+            // 
+            // txtPort
+            // 
+            resources.ApplyResources(this.txtPort, "txtPort");
+            this.txtPort.Name = "txtPort";
+            this.txtPort.TextChanged += new System.EventHandler(this.txtPort_TextChanged);
+            // 
             // ConfigPlanner
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panelQuickConnect);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chk_shownofly);
             this.Controls.Add(this.CHK_AutoParamCommit);
@@ -819,6 +866,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelQuickConnect.ResumeLayout(false);
+            this.panelQuickConnect.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -907,5 +956,11 @@
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panelQuickConnect;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.Label lPort;
+        private System.Windows.Forms.Label lHost;
+        private System.Windows.Forms.TextBox txtHost;
+        private System.Windows.Forms.CheckBox cbQuickConnect;
     }
 }

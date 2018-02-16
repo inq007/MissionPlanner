@@ -202,6 +202,11 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             //-------------------------------------
 
 
+            if (Settings.Instance["QuickTCPConnect"] != null) cbQuickConnect.Checked = Settings.Instance.GetBoolean("QuickTCPConnect");
+
+            if (Settings.Instance["QuickTCPConnectPORT"] != null) txtPort.Text = Settings.Instance["QuickTCPConnectPORT"];
+            if (Settings.Instance["QuickTCPConnectHOST"] != null) txtHost.Text = Settings.Instance["QuickTCPConnectHOST"];
+
             startup = false;
         }
 
@@ -1007,5 +1012,39 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         }
 
         //-------------------------------------------------------------------
+
+        // -- Quick TCP connect by EOSBandi
+        private void cbQuickConnect_CheckedChanged(object sender, EventArgs e)
+        {
+            MainV2._connectionControl.bQuickOpen = cbQuickConnect.Checked;
+            Settings.Instance["QuickTCPConnect"] = cbQuickConnect.Checked.ToString();
+
+            if (Settings.Instance.GetBoolean("QuickTCPConnect"))
+            {
+               MainV2._connectionControl.CMB_baudrate.Visible = false;
+               MainV2._connectionControl.CMB_serialport.Visible = false;
+               MainV2._connectionControl.cmb_sysid.Visible = false;
+
+            }
+            else
+            {
+               MainV2._connectionControl.CMB_baudrate.Visible = true;
+               MainV2._connectionControl.CMB_serialport.Visible = true;
+               MainV2._connectionControl.cmb_sysid.Visible = true;
+               MainV2._connectionControl.CMB_serialport.SelectedIndex = MainV2._connectionControl.CMB_serialport.FindString("TCP");
+            }
+        }
+        private void txtPort_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Instance["QuickTCPConnectPORT"] = txtPort.Text;
+        }
+
+        private void txtHost_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Instance["QuickTCPConnectHOST"] = txtHost.Text;
+        }
+
+
+
     }
 }

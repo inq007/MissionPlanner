@@ -20,9 +20,14 @@ namespace MissionPlanner.Controls
             {
                 ShowLinkStats?.Invoke(this, EventArgs.Empty);
             };
+
+            bQuickOpen = false;
         }
 
         public event EventHandler ShowLinkStats;
+
+        //Enables quick open to predefined host/port without any anoying message boxes 
+        public bool bQuickOpen { get; set; }
 
         public ComboBox CMB_baudrate
         {

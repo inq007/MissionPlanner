@@ -699,6 +699,26 @@ namespace MissionPlanner
                     (MainV2.Firmwares) Enum.Parse(typeof (MainV2.Firmwares), _connectionControl.TOOL_APMFirmware.Text);
             }
 
+            //quickConnect
+            if (Settings.Instance.GetBoolean("QuickTCPConnect"))
+            {
+                _connectionControl.CMB_baudrate.Visible= false;
+                _connectionControl.CMB_serialport.Visible = false;
+                _connectionControl.cmb_sysid.Visible = false;
+                _connectionControl.CMB_serialport.SelectedIndex = _connectionControl.CMB_serialport.FindString("TCP");
+
+            }
+            else
+            {
+                _connectionControl.CMB_baudrate.Visible = true;
+                _connectionControl.CMB_serialport.Visible = true;
+                _connectionControl.cmb_sysid.Visible = true;
+            }
+
+
+
+
+
             MissionPlanner.Utilities.Tracking.cid = new Guid(Settings.Instance["guid"].ToString());
 
             // setup guids for droneshare
@@ -1412,8 +1432,21 @@ namespace MissionPlanner
                     }
                     break;
                 case "TCP":
-                    comPort.BaseStream = new TcpSerial();
-                    _connectionControl.CMB_serialport.Text = "TCP";
+                    if (!_connectionControl.bQuickOpen)
+                    {
+                        comPort.BaseStream = new TcpSerial();
+                        _connectionControl.CMB_serialport.Text = "TCP";
+                    }
+                    else
+                    {
+                        comPort.BaseStream = new TcpSerial()
+                        {
+                            quickConnect = true,
+                            strHost = Settings.Instance["QuickTCPConnectHOST"],
+                            strPort = Settings.Instance["QuickTCPConnectPORT"]
+                        };
+                        _connectionControl.CMB_serialport.Text = "TCP";
+                    }
                     break;
                 case "UDP":
                     comPort.BaseStream = new UdpSerial();
