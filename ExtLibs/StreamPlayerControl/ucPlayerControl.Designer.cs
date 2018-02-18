@@ -41,6 +41,7 @@ namespace Player
             this.reconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
             this.statuslabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.playmenu = new System.Windows.Forms.ToolStrip();
             this.tsbReconnect = new System.Windows.Forms.ToolStripButton();
@@ -49,7 +50,7 @@ namespace Player
             this.tsbRecording = new System.Windows.Forms.ToolStripButton();
             this.tsbRate = new System.Windows.Forms.ToolStripComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.streamPlayerControl1 = new StreamPlayerControl();
+            this.streamPlayerControl1 = new Player.StreamPlayerControl();
             this.blink_timer = new System.Windows.Forms.Timer(this.components);
             this.popupmenu.SuspendLayout();
             this.status.SuspendLayout();
@@ -87,9 +88,11 @@ namespace Player
             // status
             // 
             this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statuslabel});
+            this.statuslabel,
+            this.toolStripDropDownButton1});
             this.status.Location = new System.Drawing.Point(0, 278);
             this.status.Name = "status";
+            this.status.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.status.Size = new System.Drawing.Size(483, 22);
             this.status.TabIndex = 1;
             this.status.Text = "statusStrip1";
@@ -100,6 +103,19 @@ namespace Player
             this.statuslabel.Name = "statuslabel";
             this.statuslabel.Size = new System.Drawing.Size(48, 17);
             this.statuslabel.Text = "Status...";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton1.Image = global::Player.Properties.Resources.refresh_512;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripDropDownButton1.ShowDropDownArrow = false;
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(117, 20);
+            this.toolStripDropDownButton1.Text = "Switch with MAP";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.switch_map_control_click);
             // 
             // timer1
             // 
@@ -240,5 +256,6 @@ namespace Player
         private StreamPlayerControl streamPlayerControl1;
         private System.Windows.Forms.ToolStripComboBox tsbRate;
         private System.Windows.Forms.Timer blink_timer;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
     }
 }

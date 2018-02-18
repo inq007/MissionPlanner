@@ -4647,7 +4647,9 @@ namespace MissionPlanner.GCSViews
                 this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
                 this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
                 this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;  
-            }            
+            }
+
+            this.ucPlayerControl1.switch_with_map_click += new EventHandler(videoSwapWithMapToolStripMenuItem_Click);
         }        
 
         private void videoSwapWithMapToolStripMenuItem_Click(object sender, EventArgs e)

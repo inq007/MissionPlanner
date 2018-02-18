@@ -69,6 +69,9 @@ namespace Player
             statuslabel.Text = "Filed: "+ e.Error;
         }
 
+        public event EventHandler switch_with_map_click;
+
+
         public enum ratelist {
             OriginalRate = 0,
             WideScreen =1,
@@ -362,5 +365,15 @@ namespace Player
             { tsbRecording.Image = Player.Properties.Resources.record_5121; tick = false; }
             else { tsbRecording.Image = Player.Properties.Resources.record_512; tick = true; }
         }
+
+        protected void switch_map_control_click(object Sender, EventArgs e )
+        {
+            if (this.switch_with_map_click != null)
+            {
+                this.switch_with_map_click(this, e);
+            }
+        }
+
+
     }
 }
