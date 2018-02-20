@@ -3713,6 +3713,9 @@ namespace MissionPlanner
                 toolStripConnectionControl.MouseLeave += MainMenu_MouseLeave;
                 menu.Visible = true;
                 menu.SendToBack();
+                menu.BGGradBot = Color.FromArgb(0x30, 0x30, 0x30);
+                menu.BGGradTop = Color.FromArgb(0x70, 0x70, 0x70);
+                menu.TextColor = Color.WhiteSmoke;
                 this.ResumeLayout();
             }
         }
@@ -3736,6 +3739,21 @@ namespace MissionPlanner
                 CustomMessageBox.Show("Link open failed. check your default webpage association");
             }
         }
+
+
+        private void toolStripMenuEXIT_Click(object sender, EventArgs e)
+        {
+
+            if (
+                 CustomMessageBox.Show("Do you want to exit MVPlanner?", "Exit MVPlanner", MessageBoxButtons.YesNo) ==
+                 (int)DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+
+        }
+
 
         [StructLayout(LayoutKind.Sequential)]
         internal class DEV_BROADCAST_HDR
