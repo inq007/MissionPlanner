@@ -616,7 +616,7 @@ namespace MissionPlanner
         {
             get
             {
-                return timeInAir / 60;
+                return ((float) ((int)(timeInAir / 60))) + ((timeInAir % 60)/100);
             }
             set
             {

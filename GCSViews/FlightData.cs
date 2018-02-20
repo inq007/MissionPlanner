@@ -3428,7 +3428,29 @@ namespace MissionPlanner.GCSViews
 
         void chk_box_quickview_CheckedChanged(object sender, EventArgs e)
         {
+            CheckBox checkbox = (CheckBox)sender;
 
+            if (checkbox.Checked)
+            {
+                // save settings
+                Settings.Instance[((QuickView)checkbox.Tag).Name] = checkbox.Name;
+
+                // set description
+                string desc = checkbox.Name;
+                ((QuickView)checkbox.Tag).Tag = desc;
+
+                desc = MainV2.comPort.MAV.cs.GetNameandUnit(desc);
+
+                ((QuickView)checkbox.Tag).desc = desc;
+
+                // set databinding for value
+                ((QuickView)checkbox.Tag).DataBindings.Clear();
+                ((QuickView)checkbox.Tag).DataBindings.Add(new Binding("number", bindingSourceQuickTab, checkbox.Name,
+                    true));
+
+                // close selection form
+                ((Form)checkbox.Parent).Close();
+            }
         }
 
         private void flyToHereAltToolStripMenuItem_Click(object sender, EventArgs e)

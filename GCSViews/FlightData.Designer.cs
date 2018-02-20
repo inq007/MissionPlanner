@@ -535,6 +535,7 @@
             this.tabQuick.Controls.Add(this.tableLayoutPanelQuick);
             this.tabQuick.Name = "tabQuick";
             this.tabQuick.UseVisualStyleBackColor = true;
+            this.tabQuick.Resize += new System.EventHandler(this.tabQuick_Resize);
             // 
             // tableLayoutPanelQuick
             // 
@@ -557,6 +558,7 @@
             this.quickView6.number = 0D;
             this.quickView6.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.quickView6.numberformat = "0.00";
+            this.quickView6.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // contextMenuStripQuickView
             // 
@@ -585,6 +587,7 @@
             this.quickView5.number = 0D;
             this.quickView5.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(86)))));
             this.quickView5.numberformat = "0.00";
+            this.quickView5.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // quickView4
             // 
@@ -596,6 +599,7 @@
             this.quickView4.number = 0D;
             this.quickView4.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(83)))));
             this.quickView4.numberformat = "0.00";
+            this.quickView4.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // quickView3
             // 
@@ -607,6 +611,7 @@
             this.quickView3.number = 0D;
             this.quickView3.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(96)))), ((int)(((byte)(91)))));
             this.quickView3.numberformat = "0.00";
+            this.quickView3.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // quickView2
             // 
@@ -618,6 +623,7 @@
             this.quickView2.number = 0D;
             this.quickView2.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(132)))), ((int)(((byte)(46)))));
             this.quickView2.numberformat = "0.00";
+            this.quickView2.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // quickView1
             // 
@@ -630,6 +636,7 @@
             this.quickView1.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(151)))), ((int)(((byte)(248)))));
             this.quickView1.numberformat = "0.00";
             this.toolTip1.SetToolTip(this.quickView1, resources.GetString("quickView1.ToolTip"));
+            this.quickView1.DoubleClick += new System.EventHandler(this.quickView_DoubleClick);
             // 
             // tabActions
             // 
@@ -679,6 +686,7 @@
             0,
             0,
             0});
+            this.modifyandSetLoiterRad.Click += new System.EventHandler(this.modifyandSetLoiterRad_Click);
             // 
             // BUT_abortland
             // 
@@ -689,6 +697,7 @@
             this.BUT_abortland.Name = "BUT_abortland";
             this.toolTip1.SetToolTip(this.BUT_abortland, resources.GetString("BUT_abortland.ToolTip"));
             this.BUT_abortland.UseVisualStyleBackColor = true;
+            this.BUT_abortland.Click += new System.EventHandler(this.BUT_abortland_Click);
             // 
             // BUT_resumemis
             // 
@@ -698,6 +707,7 @@
             resources.ApplyResources(this.BUT_resumemis, "BUT_resumemis");
             this.BUT_resumemis.Name = "BUT_resumemis";
             this.BUT_resumemis.UseVisualStyleBackColor = true;
+            this.BUT_resumemis.Click += new System.EventHandler(this.BUT_resumemis_Click);
             // 
             // CMB_mountmode
             // 
@@ -715,6 +725,7 @@
             this.BUT_mountmode.Name = "BUT_mountmode";
             this.toolTip1.SetToolTip(this.BUT_mountmode, resources.GetString("BUT_mountmode.ToolTip"));
             this.BUT_mountmode.UseVisualStyleBackColor = true;
+            this.BUT_mountmode.Click += new System.EventHandler(this.BUT_mountmode_Click);
             // 
             // BUT_ARM
             // 
@@ -725,6 +736,7 @@
             this.BUT_ARM.Name = "BUT_ARM";
             this.toolTip1.SetToolTip(this.BUT_ARM, resources.GetString("BUT_ARM.ToolTip"));
             this.BUT_ARM.UseVisualStyleBackColor = true;
+            this.BUT_ARM.Click += new System.EventHandler(this.BUT_ARM_Click);
             // 
             // BUT_joystick
             // 
@@ -735,6 +747,7 @@
             this.BUT_joystick.Name = "BUT_joystick";
             this.toolTip1.SetToolTip(this.BUT_joystick, resources.GetString("BUT_joystick.ToolTip"));
             this.BUT_joystick.UseVisualStyleBackColor = true;
+            this.BUT_joystick.Click += new System.EventHandler(this.BUT_joystick_Click);
             // 
             // BUT_quickmanual
             // 
@@ -745,6 +758,7 @@
             this.BUT_quickmanual.Name = "BUT_quickmanual";
             this.toolTip1.SetToolTip(this.BUT_quickmanual, resources.GetString("BUT_quickmanual.ToolTip"));
             this.BUT_quickmanual.UseVisualStyleBackColor = true;
+            this.BUT_quickmanual.Click += new System.EventHandler(this.BUT_quickmanual_Click);
             // 
             // BUT_quickrtl
             // 
@@ -755,6 +769,7 @@
             this.BUT_quickrtl.Name = "BUT_quickrtl";
             this.toolTip1.SetToolTip(this.BUT_quickrtl, resources.GetString("BUT_quickrtl.ToolTip"));
             this.BUT_quickrtl.UseVisualStyleBackColor = true;
+            this.BUT_quickrtl.Click += new System.EventHandler(this.BUT_quickrtl_Click);
             // 
             // BUT_quickauto
             // 
@@ -765,6 +780,7 @@
             this.BUT_quickauto.Name = "BUT_quickauto";
             this.toolTip1.SetToolTip(this.BUT_quickauto, resources.GetString("BUT_quickauto.ToolTip"));
             this.BUT_quickauto.UseVisualStyleBackColor = true;
+            this.BUT_quickauto.Click += new System.EventHandler(this.BUT_quickauto_Click);
             // 
             // CMB_setwp
             // 
@@ -774,6 +790,7 @@
             resources.GetString("CMB_setwp.Items")});
             resources.ApplyResources(this.CMB_setwp, "CMB_setwp");
             this.CMB_setwp.Name = "CMB_setwp";
+            this.CMB_setwp.Click += new System.EventHandler(this.CMB_setwp_Click);
             // 
             // BUT_setwp
             // 
@@ -784,6 +801,7 @@
             this.BUT_setwp.Name = "BUT_setwp";
             this.toolTip1.SetToolTip(this.BUT_setwp, resources.GetString("BUT_setwp.ToolTip"));
             this.BUT_setwp.UseVisualStyleBackColor = true;
+            this.BUT_setwp.Click += new System.EventHandler(this.BUT_setwp_Click);
             // 
             // CMB_modes
             // 
@@ -791,6 +809,7 @@
             this.CMB_modes.FormattingEnabled = true;
             resources.ApplyResources(this.CMB_modes, "CMB_modes");
             this.CMB_modes.Name = "CMB_modes";
+            this.CMB_modes.Click += new System.EventHandler(this.CMB_modes_Click);
             // 
             // BUT_setmode
             // 
@@ -801,6 +820,7 @@
             this.BUT_setmode.Name = "BUT_setmode";
             this.toolTip1.SetToolTip(this.BUT_setmode, resources.GetString("BUT_setmode.ToolTip"));
             this.BUT_setmode.UseVisualStyleBackColor = true;
+            this.BUT_setmode.Click += new System.EventHandler(this.BUT_setmode_Click);
             // 
             // BUT_clear_track
             // 
@@ -811,6 +831,7 @@
             this.BUT_clear_track.Name = "BUT_clear_track";
             this.toolTip1.SetToolTip(this.BUT_clear_track, resources.GetString("BUT_clear_track.ToolTip"));
             this.BUT_clear_track.UseVisualStyleBackColor = true;
+            this.BUT_clear_track.Click += new System.EventHandler(this.BUT_clear_track_Click);
             // 
             // CMB_action
             // 
@@ -829,6 +850,7 @@
             this.BUT_Homealt.Name = "BUT_Homealt";
             this.toolTip1.SetToolTip(this.BUT_Homealt, resources.GetString("BUT_Homealt.ToolTip"));
             this.BUT_Homealt.UseVisualStyleBackColor = true;
+            this.BUT_Homealt.Click += new System.EventHandler(this.BUT_Homealt_Click);
             // 
             // BUT_RAWSensor
             // 
@@ -839,6 +861,7 @@
             this.BUT_RAWSensor.Name = "BUT_RAWSensor";
             this.toolTip1.SetToolTip(this.BUT_RAWSensor, resources.GetString("BUT_RAWSensor.ToolTip"));
             this.BUT_RAWSensor.UseVisualStyleBackColor = true;
+            this.BUT_RAWSensor.Click += new System.EventHandler(this.BUT_RAWSensor_Click);
             // 
             // BUTrestartmission
             // 
@@ -849,6 +872,7 @@
             this.BUTrestartmission.Name = "BUTrestartmission";
             this.toolTip1.SetToolTip(this.BUTrestartmission, resources.GetString("BUTrestartmission.ToolTip"));
             this.BUTrestartmission.UseVisualStyleBackColor = true;
+            this.BUTrestartmission.Click += new System.EventHandler(this.BUTrestartmission_Click);
             // 
             // BUTactiondo
             // 
@@ -859,6 +883,7 @@
             this.BUTactiondo.Name = "BUTactiondo";
             this.toolTip1.SetToolTip(this.BUTactiondo, resources.GetString("BUTactiondo.ToolTip"));
             this.BUTactiondo.UseVisualStyleBackColor = true;
+            this.BUTactiondo.Click += new System.EventHandler(this.BUTactiondo_Click);
             // 
             // modifyandSetSpeed
             // 
@@ -880,6 +905,8 @@
             0,
             0,
             0});
+            this.modifyandSetSpeed.Click += new System.EventHandler(this.modifyandSetSpeed_Click);
+            this.modifyandSetSpeed.ParentChanged += new System.EventHandler(this.modifyandSetSpeed_ParentChanged);
             // 
             // modifyandSetAlt
             // 
@@ -901,6 +928,7 @@
             0,
             0,
             0});
+            this.modifyandSetAlt.Click += new System.EventHandler(this.modifyandSetAlt_Click);
             // 
             // tabActionsSimple
             // 
@@ -920,6 +948,7 @@
             this.myButton1.Name = "myButton1";
             this.toolTip1.SetToolTip(this.myButton1, resources.GetString("myButton1.ToolTip"));
             this.myButton1.UseVisualStyleBackColor = true;
+            this.myButton1.Click += new System.EventHandler(this.BUT_quickmanual_Click);
             // 
             // myButton2
             // 
@@ -930,6 +959,7 @@
             this.myButton2.Name = "myButton2";
             this.toolTip1.SetToolTip(this.myButton2, resources.GetString("myButton2.ToolTip"));
             this.myButton2.UseVisualStyleBackColor = true;
+            this.myButton2.Click += new System.EventHandler(this.BUT_quickrtl_Click);
             // 
             // myButton3
             // 
@@ -940,6 +970,7 @@
             this.myButton3.Name = "myButton3";
             this.toolTip1.SetToolTip(this.myButton3, resources.GetString("myButton3.ToolTip"));
             this.myButton3.UseVisualStyleBackColor = true;
+            this.myButton3.Click += new System.EventHandler(this.BUT_quickauto_Click);
             // 
             // tabPagePreFlight
             // 
@@ -962,6 +993,7 @@
             resources.ApplyResources(this.tabGauges, "tabGauges");
             this.tabGauges.Name = "tabGauges";
             this.tabGauges.UseVisualStyleBackColor = true;
+            this.tabGauges.Resize += new System.EventHandler(this.tabPage1_Resize);
             // 
             // Gvspeed
             // 
@@ -1410,6 +1442,7 @@
             this.Gspeed.Value1 = 0F;
             this.Gspeed.Value2 = 0F;
             this.Gspeed.Value3 = 0F;
+            this.Gspeed.DoubleClick += new System.EventHandler(this.Gspeed_DoubleClick);
             // 
             // tabStatus
             // 
@@ -1526,6 +1559,7 @@
             resources.ApplyResources(this.BUT_loadtelem, "BUT_loadtelem");
             this.BUT_loadtelem.Name = "BUT_loadtelem";
             this.BUT_loadtelem.UseVisualStyleBackColor = true;
+            this.BUT_loadtelem.Click += new System.EventHandler(this.BUT_loadtelem_Click);
             // 
             // lbl_playbackspeed
             // 
@@ -1545,6 +1579,7 @@
             this.tracklog.Maximum = 100;
             this.tracklog.Name = "tracklog";
             this.tracklog.TickFrequency = 5;
+            this.tracklog.Scroll += new System.EventHandler(this.tracklog_Scroll);
             // 
             // LBL_logfn
             // 
@@ -1561,6 +1596,7 @@
             resources.ApplyResources(this.BUT_log2kml, "BUT_log2kml");
             this.BUT_log2kml.Name = "BUT_log2kml";
             this.BUT_log2kml.UseVisualStyleBackColor = true;
+            this.BUT_log2kml.Click += new System.EventHandler(this.BUT_log2kml_Click);
             // 
             // BUT_playlog
             // 
@@ -1570,6 +1606,7 @@
             resources.ApplyResources(this.BUT_playlog, "BUT_playlog");
             this.BUT_playlog.Name = "BUT_playlog";
             this.BUT_playlog.UseVisualStyleBackColor = true;
+            this.BUT_playlog.Click += new System.EventHandler(this.BUT_playlog_Click);
             // 
             // panel2
             // 
@@ -1598,6 +1635,7 @@
             this.BUT_speed10.Name = "BUT_speed10";
             this.BUT_speed10.Tag = "10";
             this.BUT_speed10.UseVisualStyleBackColor = true;
+            this.BUT_speed10.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed5
             // 
@@ -1608,6 +1646,7 @@
             this.BUT_speed5.Name = "BUT_speed5";
             this.BUT_speed5.Tag = "5";
             this.BUT_speed5.UseVisualStyleBackColor = true;
+            this.BUT_speed5.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed2
             // 
@@ -1618,6 +1657,7 @@
             this.BUT_speed2.Name = "BUT_speed2";
             this.BUT_speed2.Tag = "2";
             this.BUT_speed2.UseVisualStyleBackColor = true;
+            this.BUT_speed2.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed1
             // 
@@ -1628,6 +1668,7 @@
             this.BUT_speed1.Name = "BUT_speed1";
             this.BUT_speed1.Tag = "1";
             this.BUT_speed1.UseVisualStyleBackColor = true;
+            this.BUT_speed1.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed1_2
             // 
@@ -1638,6 +1679,7 @@
             this.BUT_speed1_2.Name = "BUT_speed1_2";
             this.BUT_speed1_2.Tag = "0.5";
             this.BUT_speed1_2.UseVisualStyleBackColor = true;
+            this.BUT_speed1_2.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed1_4
             // 
@@ -1648,6 +1690,7 @@
             this.BUT_speed1_4.Name = "BUT_speed1_4";
             this.BUT_speed1_4.Tag = "0.25";
             this.BUT_speed1_4.UseVisualStyleBackColor = true;
+            this.BUT_speed1_4.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // BUT_speed1_10
             // 
@@ -1658,6 +1701,7 @@
             this.BUT_speed1_10.Name = "BUT_speed1_10";
             this.BUT_speed1_10.Tag = "0.1";
             this.BUT_speed1_10.UseVisualStyleBackColor = true;
+            this.BUT_speed1_10.Click += new System.EventHandler(this.BUT_speed1_Click);
             // 
             // tablogbrowse
             // 
@@ -1679,6 +1723,7 @@
             resources.ApplyResources(this.BUT_loganalysis, "BUT_loganalysis");
             this.BUT_loganalysis.Name = "BUT_loganalysis";
             this.BUT_loganalysis.UseVisualStyleBackColor = true;
+            this.BUT_loganalysis.Click += new System.EventHandler(this.BUT_loganalysis_Click);
             // 
             // BUT_DFMavlink
             // 
@@ -1688,6 +1733,7 @@
             resources.ApplyResources(this.BUT_DFMavlink, "BUT_DFMavlink");
             this.BUT_DFMavlink.Name = "BUT_DFMavlink";
             this.BUT_DFMavlink.UseVisualStyleBackColor = true;
+            this.BUT_DFMavlink.Click += new System.EventHandler(this.BUT_DFMavlink_Click);
             // 
             // but_dflogtokml
             // 
@@ -1697,6 +1743,7 @@
             resources.ApplyResources(this.but_dflogtokml, "but_dflogtokml");
             this.but_dflogtokml.Name = "but_dflogtokml";
             this.but_dflogtokml.UseVisualStyleBackColor = true;
+            this.but_dflogtokml.Click += new System.EventHandler(this.but_dflogtokml_Click);
             // 
             // but_bintolog
             // 
@@ -1706,6 +1753,7 @@
             resources.ApplyResources(this.but_bintolog, "but_bintolog");
             this.but_bintolog.Name = "but_bintolog";
             this.but_bintolog.UseVisualStyleBackColor = true;
+            this.but_bintolog.Click += new System.EventHandler(this.but_bintolog_Click);
             // 
             // BUT_matlab
             // 
@@ -1715,6 +1763,7 @@
             resources.ApplyResources(this.BUT_matlab, "BUT_matlab");
             this.BUT_matlab.Name = "BUT_matlab";
             this.BUT_matlab.UseVisualStyleBackColor = true;
+            this.BUT_matlab.Click += new System.EventHandler(this.BUT_matlab_Click);
             // 
             // BUT_logbrowse
             // 
@@ -1754,6 +1803,7 @@
             resources.ApplyResources(this.BUT_edit_selected, "BUT_edit_selected");
             this.BUT_edit_selected.Name = "BUT_edit_selected";
             this.BUT_edit_selected.UseVisualStyleBackColor = true;
+            this.BUT_edit_selected.Click += new System.EventHandler(this.BUT_edit_selected_Click);
             // 
             // labelSelectedScript
             // 
@@ -1768,6 +1818,7 @@
             resources.ApplyResources(this.BUT_run_script, "BUT_run_script");
             this.BUT_run_script.Name = "BUT_run_script";
             this.BUT_run_script.UseVisualStyleBackColor = true;
+            this.BUT_run_script.Click += new System.EventHandler(this.BUT_run_script_Click);
             // 
             // BUT_abort_script
             // 
@@ -1777,6 +1828,7 @@
             resources.ApplyResources(this.BUT_abort_script, "BUT_abort_script");
             this.BUT_abort_script.Name = "BUT_abort_script";
             this.BUT_abort_script.UseVisualStyleBackColor = true;
+            this.BUT_abort_script.Click += new System.EventHandler(this.BUT_abort_script_Click);
             // 
             // labelScriptStatus
             // 
@@ -1791,6 +1843,7 @@
             resources.ApplyResources(this.BUT_select_script, "BUT_select_script");
             this.BUT_select_script.Name = "BUT_select_script";
             this.BUT_select_script.UseVisualStyleBackColor = true;
+            this.BUT_select_script.Click += new System.EventHandler(this.BUT_select_script_Click);
             // 
             // tabPagemessages
             // 
@@ -1847,6 +1900,7 @@
             this.trackBarRoll.Minimum = -45;
             this.trackBarRoll.Name = "trackBarRoll";
             this.trackBarRoll.TickFrequency = 10;
+            this.trackBarRoll.Scroll += new System.EventHandler(this.gimbalTrackbar_Scroll);
             // 
             // groupBoxYaw
             // 
@@ -1870,12 +1924,14 @@
             this.trackBarYaw.Minimum = -45;
             this.trackBarYaw.Name = "trackBarYaw";
             this.trackBarYaw.TickFrequency = 10;
+            this.trackBarYaw.Scroll += new System.EventHandler(this.gimbalTrackbar_Scroll);
             // 
             // BUT_resetGimbalPos
             // 
             resources.ApplyResources(this.BUT_resetGimbalPos, "BUT_resetGimbalPos");
             this.BUT_resetGimbalPos.Name = "BUT_resetGimbalPos";
             this.BUT_resetGimbalPos.UseVisualStyleBackColor = true;
+            this.BUT_resetGimbalPos.Click += new System.EventHandler(this.BUT_resetGimbalPos_Click);
             // 
             // groupBoxPitch
             // 
@@ -1894,6 +1950,7 @@
             this.trackBarPitch.Name = "trackBarPitch";
             this.trackBarPitch.SmallChange = 5;
             this.trackBarPitch.TickFrequency = 10;
+            this.trackBarPitch.Scroll += new System.EventHandler(this.gimbalTrackbar_Scroll);
             // 
             // TXT_gimbalPitchPos
             // 
@@ -2083,7 +2140,7 @@
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 180D;
+            this.windDir1.Direction = 360D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
