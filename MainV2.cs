@@ -3748,7 +3748,8 @@ namespace MissionPlanner
                  CustomMessageBox.Show("Do you want to exit MVPlanner?", "Exit MVPlanner", MessageBoxButtons.YesNo) ==
                  (int)DialogResult.Yes)
             {
-                Application.Exit();
+                //Application.Exit();
+                this.Close();
             }
 
 

@@ -61,7 +61,7 @@
             this.label2.Size = new System.Drawing.Size(113, 26);
             this.label2.TabIndex = 0;
             this.label2.Tag = "custom";
-            this.label2.Text = "Based on MissionPlanner by Michael Oborne and others\nGNU General Public Lincese v3";
+            this.label2.Text = "Based on MissionPlanner by Michael Oborne and others\nGNU General Public License v3";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
 
             // 
