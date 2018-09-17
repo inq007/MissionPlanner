@@ -111,11 +111,13 @@
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelQuickConnect = new System.Windows.Forms.Panel();
-            this.cbQuickConnect = new System.Windows.Forms.CheckBox();
-            this.txtHost = new System.Windows.Forms.TextBox();
-            this.lHost = new System.Windows.Forms.Label();
-            this.lPort = new System.Windows.Forms.Label();
             this.txtPort = new System.Windows.Forms.TextBox();
+            this.lPort = new System.Windows.Forms.Label();
+            this.lHost = new System.Windows.Forms.Label();
+            this.txtHost = new System.Windows.Forms.TextBox();
+            this.cbQuickConnect = new System.Windows.Forms.CheckBox();
+            this.txtRecordUrl = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_tracklength)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelQuickConnect.SuspendLayout();
@@ -679,6 +681,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtRecordUrl);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.txtFFMPEG);
             this.panel1.Controls.Add(this.label8);
@@ -755,12 +759,21 @@
             resources.ApplyResources(this.panelQuickConnect, "panelQuickConnect");
             this.panelQuickConnect.Name = "panelQuickConnect";
             // 
-            // cbQuickConnect
+            // txtPort
             // 
-            resources.ApplyResources(this.cbQuickConnect, "cbQuickConnect");
-            this.cbQuickConnect.Name = "cbQuickConnect";
-            this.cbQuickConnect.UseVisualStyleBackColor = true;
-            this.cbQuickConnect.CheckStateChanged += new System.EventHandler(this.cbQuickConnect_CheckedChanged);
+            resources.ApplyResources(this.txtPort, "txtPort");
+            this.txtPort.Name = "txtPort";
+            this.txtPort.TextChanged += new System.EventHandler(this.txtPort_TextChanged);
+            // 
+            // lPort
+            // 
+            resources.ApplyResources(this.lPort, "lPort");
+            this.lPort.Name = "lPort";
+            // 
+            // lHost
+            // 
+            resources.ApplyResources(this.lHost, "lHost");
+            this.lHost.Name = "lHost";
             // 
             // txtHost
             // 
@@ -768,21 +781,23 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
             // 
-            // lHost
+            // cbQuickConnect
             // 
-            resources.ApplyResources(this.lHost, "lHost");
-            this.lHost.Name = "lHost";
+            resources.ApplyResources(this.cbQuickConnect, "cbQuickConnect");
+            this.cbQuickConnect.Name = "cbQuickConnect";
+            this.cbQuickConnect.UseVisualStyleBackColor = true;
+            this.cbQuickConnect.CheckStateChanged += new System.EventHandler(this.cbQuickConnect_CheckedChanged);
             // 
-            // lPort
+            // txtRecordUrl
             // 
-            resources.ApplyResources(this.lPort, "lPort");
-            this.lPort.Name = "lPort";
+            resources.ApplyResources(this.txtRecordUrl, "txtRecordUrl");
+            this.txtRecordUrl.Name = "txtRecordUrl";
+            this.txtRecordUrl.TextChanged += new System.EventHandler(this.txtRecordUrl_TextChanged);
             // 
-            // txtPort
+            // label9
             // 
-            resources.ApplyResources(this.txtPort, "txtPort");
-            this.txtPort.Name = "txtPort";
-            this.txtPort.TextChanged += new System.EventHandler(this.txtPort_TextChanged);
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
             // 
             // ConfigPlanner
             // 
@@ -962,5 +977,7 @@
         private System.Windows.Forms.Label lHost;
         private System.Windows.Forms.TextBox txtHost;
         private System.Windows.Forms.CheckBox cbQuickConnect;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtRecordUrl;
     }
 }

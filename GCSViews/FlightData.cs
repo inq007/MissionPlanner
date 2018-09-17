@@ -2289,6 +2289,7 @@ namespace MissionPlanner.GCSViews
             if (MainV2.MediaStreamUrl != null)
             {
                 this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
+                this.ucPlayerControl1.RecordUrl = MainV2.MediaRecordUrl;
                 this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
                 this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;
                 UpdateStreamWindowStatus(MainV2.MediaStreamConnect);              
@@ -2304,7 +2305,7 @@ namespace MissionPlanner.GCSViews
                 if (status)
                 {
                     this.ucPlayerControl1.Play();
-                    if (MainV2.MediaStreamAutoconnect)
+                    if (MainV2.MediaStreamAutoconnect && !this.ucPlayerControl1.IsRecording)
                     {
                         this.ucPlayerControl1.StartRecording(MainV2.MediaStreamSaveDir, "MV03vid",true,300);
                     }
@@ -4666,6 +4667,7 @@ namespace MissionPlanner.GCSViews
         {
             if (MainV2.MediaStreamUrl != null)
             {
+                this.ucPlayerControl1.RecordUrl = MainV2.MediaRecordUrl;
                 this.ucPlayerControl1.MediaUrl = MainV2.MediaStreamUrl;
                 this.ucPlayerControl1.ffmegPath = MainV2.MediaStreamFFMPEG;
                 this.ucPlayerControl1.RecordPath = MainV2.MediaStreamSaveDir;  

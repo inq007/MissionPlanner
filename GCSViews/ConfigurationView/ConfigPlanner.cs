@@ -190,11 +190,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
 
             //Winky-------------------------------- & Bandi
             txtUrl.Text = "";
+            txtRecordUrl.Text = "";
             txtFFMPEG.Text = "";
             txtVideoSave.Text = "";
             checkBox1.Checked = false;
 
             if (Settings.Instance["StreamVideoURL"] != null) txtUrl.Text = Settings.Instance["StreamVideoURL"].ToString();
+            if (Settings.Instance["StreamRecordURL"] != null) txtRecordUrl.Text = Settings.Instance["StreamRecordURL"].ToString();
             if (Settings.Instance["StreamVideoFFMPEG"] != null) txtFFMPEG.Text = Settings.Instance["StreamVideoFFMPEG"].ToString();
             if (Settings.Instance["VideoSaveDir"] != null) txtVideoSave.Text = Settings.Instance["VideoSaveDir"].ToString();
             checkBox1.Checked = Settings.Instance.GetBoolean("StreamVideoAutoConnect");
@@ -995,6 +997,13 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"];
         }
 
+        private void txtRecordUrl_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Instance["StreamRecordURL"] = txtRecordUrl.Text;
+            MainV2.MediaRecordUrl = Settings.Instance["StreamRecordURL"];
+
+        }
+
         private void txtFFMPEG_TextChanged(object sender, EventArgs e)
         {
             string path = txtFFMPEG.Text;
@@ -1043,7 +1052,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         {
             Settings.Instance["QuickTCPConnectHOST"] = txtHost.Text;
         }
-
 
 
     }

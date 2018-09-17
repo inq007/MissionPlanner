@@ -475,6 +475,7 @@
             this.ucPlayerControl1.ffmegPath = "";
             this.ucPlayerControl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ucPlayerControl1.MediaUrl = "";
+            this.ucPlayerControl1.RecordUrl = "";
             this.ucPlayerControl1.Name = "ucPlayerControl1";
             this.ucPlayerControl1.RecordPath = "";
             this.ucPlayerControl1.VideoRate = Player.ucPlayerControl.ratelist.OriginalRate;

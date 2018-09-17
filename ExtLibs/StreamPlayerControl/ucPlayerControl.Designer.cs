@@ -41,6 +41,7 @@ namespace Player
             this.reconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
             this.statuslabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.playmenu = new System.Windows.Forms.ToolStrip();
@@ -89,6 +90,7 @@ namespace Player
             // 
             this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statuslabel,
+            this.toolStripStatusLabel1,
             this.toolStripDropDownButton1});
             this.status.Location = new System.Drawing.Point(0, 278);
             this.status.Name = "status";
@@ -103,6 +105,12 @@ namespace Player
             this.statuslabel.Name = "statuslabel";
             this.statuslabel.Size = new System.Drawing.Size(48, 17);
             this.statuslabel.Text = "Status...";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(55, 17);
+            this.toolStripStatusLabel1.Text = "                ";
             // 
             // toolStripDropDownButton1
             // 
@@ -120,7 +128,7 @@ namespace Player
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // playmenu
@@ -258,5 +266,6 @@ namespace Player
         private System.Windows.Forms.ToolStripComboBox tsbRate;
         private System.Windows.Forms.Timer blink_timer;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

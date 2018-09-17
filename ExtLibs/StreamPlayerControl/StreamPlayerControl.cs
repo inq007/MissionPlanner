@@ -210,6 +210,7 @@ namespace Player
 
         private void RaiseStreamStoppedEvent()
         {
+
             IsPlaying = false;
 
             if (StreamStopped != null)

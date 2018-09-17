@@ -1040,6 +1040,7 @@ namespace MissionPlanner
             //Winky---------------------------
 
             if (Settings.Instance["StreamVideoURL"] != null) MainV2.MediaStreamUrl = Settings.Instance["StreamVideoURL"].ToString();
+            if (Settings.Instance["StreamRecordURL"] != null) MainV2.MediaRecordUrl = Settings.Instance["StreamRecordURL"].ToString();
             if (Settings.Instance["StreamVideoFFMPEG"] != null) MainV2.MediaStreamFFMPEG = Settings.Instance["StreamVideoFFMPEG"].ToString();
             if (Settings.Instance["VideoSaveDir"] != null) MainV2.MediaStreamSaveDir = Settings.Instance["VideoSaveDir"].ToString();
             if (Settings.Instance["StreamVideoAutoConnect"] != null) MainV2.MediaStreamAutoconnect = Settings.Instance.GetBoolean("StreamVideoAutoConnect");
@@ -4056,6 +4057,7 @@ namespace MissionPlanner
 
         //Winky---------------------------------
         public static string MediaStreamUrl {get; set;}
+        public static string MediaRecordUrl { get; set; }
         public static string MediaStreamFFMPEG { get; set; }
         public static string MediaStreamSaveDir { get; set; }
         public static bool MediaStreamAutoconnect { get; set; }

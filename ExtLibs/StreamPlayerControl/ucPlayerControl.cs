@@ -15,6 +15,7 @@ namespace Player
     public partial class ucPlayerControl : UserControl
     {
         string url_string = "";
+        string recordurl_string = "";
         bool reconnect = false;
         bool recording = false;
         string ffmpeg_path = "";
@@ -94,6 +95,16 @@ namespace Player
             }
         }
 
+        public string RecordUrl
+        {
+            get { return recordurl_string; }
+            set
+            {
+                recordurl_string = value;
+            }
+        }
+
+
         private bool IsRTSP()
         {
             bool retBool = false;
@@ -148,13 +159,26 @@ namespace Player
         public void Stop()
         {
             streamPlayerControl1.Stop();
+            streamPlayerControl1.StreamStarted -= StreamPlayerControl1_StreamStarted;
             timer1.Enabled = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (streamPlayerControl1.IsPlaying) statuslabel.Text = "Playing";
-            else { if (reconnect) { this.Play(); statuslabel.Text = "Reconnecting..."; } }
+            if (streamPlayerControl1.IsPlaying)
+            {
+                statuslabel.Text = "Playing";
+            }
+            else
+            {
+                if (reconnect)
+                {
+                    //this.Stop();
+                    this.Play();
+                    statuslabel.Text = "Reconnecting...";
+                }
+            }
+
             if (recording) statuslabel.Text = "Recording";
         }
         
@@ -165,10 +189,12 @@ namespace Player
         public void StartRecording()
         {
 
+
+
             string rtsp_param = IsRTSP() ? " -rtsp_transport tcp" : "";
             if (ffmpeg_params == "")
             {
-                ffmpeg_params = rtsp_param + " -i " + url_string + " -f segment -segment_time 10 -segment_format mp4 -reset_timestamps 1 -c copy -map 0 -strftime 1 " + record_path + "rec_%Y%m%d_%H%M%S.mp4 ";
+                ffmpeg_params = rtsp_param + " -i " + recordurl_string + " -f segment -segment_time 300 -segment_format mp4 -reset_timestamps 1 -c copy -map 0 -strftime 1 " + record_path + "rec_%Y%m%d_%H%M%S.avi ";
             }
 
             foreach (var process in Process.GetProcessesByName("ffmpeg"))
@@ -192,10 +218,11 @@ namespace Player
         public void StartRecording(string path)
         {
 
+
             string rtsp_param = IsRTSP() ? " -rtsp_transport tcp" : "";
             if (ffmpeg_params == "")
             {
-                ffmpeg_params = rtsp_param + " -i " + url_string + " -c copy -map 0 -strftime 1 " + path  + "rec_%Y%m%d_%H%M%S.mp4 ";
+                ffmpeg_params = rtsp_param + " -i " + recordurl_string + " -c copy -map 0 -strftime 1 " + path  + "rec_%Y%m%d_%H%M%S.avi ";
             }
 
             foreach (var process in Process.GetProcessesByName("ffmpeg"))
@@ -220,8 +247,9 @@ namespace Player
         /// <param name="fragmented">Fragmented or one file</param>
         /// <param name="fragmenttime">Fragmentation time (sec)</param>
         /// <param name="filetype">File type string(mp4,avi,asf,mpg)</param>
-        public void StartRecording(string path, string prefix, bool fragmented=true, int fragmenttime = 30, string filetype="mp4")
+        public void StartRecording(string path, string prefix, bool fragmented=true, int fragmenttime = 30, string filetype="avi")
         {
+
             string param = "";
 
             string rtsp_param = IsRTSP() ? " -rtsp_transport tcp" : "";
@@ -235,7 +263,7 @@ namespace Player
 
             if (ffmpeg_params == "")
             {
-                param = rtsp_param + " -i " + url_string;
+                param = rtsp_param + " -i " + recordurl_string;
             }
 
             if (fragmented)
@@ -243,7 +271,7 @@ namespace Player
                 param += " -f segment -segment_time "+ fragmenttime.ToString() + " -segment_format "+ filetype + " -reset_timestamps 1 ";
             }
 
-            param += "-c copy -map 0 -strftime 1 " + path + "\\" + prefix + "_%Y%m%d_%H%M%S.mp4 ";
+            param += "-c copy -map 0 -strftime 1 " + path + "\\" + prefix + "_%Y%m%d_%H%M%S.avi ";
 
 
             if (ffmegParams=="") proc.StartInfo.Arguments = param; else proc.StartInfo.Arguments = ffmegParams;
@@ -374,6 +402,10 @@ namespace Player
             }
         }
 
-
+        private void tsbForceReconnect_Click(object sender, EventArgs e)
+        {
+            Stop();
+            Play();
+        }
     }
 }
