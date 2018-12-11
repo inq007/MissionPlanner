@@ -883,7 +883,7 @@ namespace MissionPlanner.GCSViews
                         have_dual_gps = true;
                         gps_num = "GPS1: " + gps1_count.ToString() + "  GPS2: " + gps2_count.ToString();
                         this.Invoke((MethodInvoker)delegate {
-                            if ((gps1_count <= 6) || (gps1_count <= 6))
+                            if ((gps1_count <= 6) || (gps2_count <= 6))
                             {
                                 lbl_gpssats.ForeColor = Color.Red;
                                 lbl_gps_message.Text = " Wait for both GPS to achieve at least 7 sats!";
