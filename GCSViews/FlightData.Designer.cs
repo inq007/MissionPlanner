@@ -158,6 +158,9 @@
             this.takeOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onOffCameraOverlapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altitudeAngelSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_flight_mode = new System.Windows.Forms.Label();
+            this.lbl_gps_message = new System.Windows.Forms.Label();
+            this.lbl_gpssats = new System.Windows.Forms.Label();
             this.but_disablejoystick = new MissionPlanner.Controls.MyButton();
             this.distanceBar1 = new MissionPlanner.Controls.DistanceBar();
             this.windDir1 = new MissionPlanner.Controls.WindDir();
@@ -475,9 +478,9 @@
             this.ucPlayerControl1.ffmegPath = "";
             this.ucPlayerControl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ucPlayerControl1.MediaUrl = "";
-            this.ucPlayerControl1.RecordUrl = "";
             this.ucPlayerControl1.Name = "ucPlayerControl1";
             this.ucPlayerControl1.RecordPath = "";
+            this.ucPlayerControl1.RecordUrl = "";
             this.ucPlayerControl1.VideoRate = Player.ucPlayerControl.ratelist.OriginalRate;
             this.ucPlayerControl1.VisiblePlayerMenu = false;
             this.ucPlayerControl1.VisibleStatus = true;
@@ -1979,6 +1982,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.ContextMenuStrip = this.contextMenuStripMap;
+            this.splitContainer1.Panel2.Controls.Add(this.lbl_flight_mode);
+            this.splitContainer1.Panel2.Controls.Add(this.lbl_gps_message);
+            this.splitContainer1.Panel2.Controls.Add(this.lbl_gpssats);
             this.splitContainer1.Panel2.Controls.Add(this.but_disablejoystick);
             this.splitContainer1.Panel2.Controls.Add(this.distanceBar1);
             this.splitContainer1.Panel2.Controls.Add(this.windDir1);
@@ -2117,6 +2123,21 @@
             this.altitudeAngelSettingsToolStripMenuItem.Name = "altitudeAngelSettingsToolStripMenuItem";
             resources.ApplyResources(this.altitudeAngelSettingsToolStripMenuItem, "altitudeAngelSettingsToolStripMenuItem");
             this.altitudeAngelSettingsToolStripMenuItem.Click += new System.EventHandler(this.altitudeAngelSettingsToolStripMenuItem_Click);
+            // 
+            // lbl_flight_mode
+            // 
+            resources.ApplyResources(this.lbl_flight_mode, "lbl_flight_mode");
+            this.lbl_flight_mode.Name = "lbl_flight_mode";
+            // 
+            // lbl_gps_message
+            // 
+            resources.ApplyResources(this.lbl_gps_message, "lbl_gps_message");
+            this.lbl_gps_message.Name = "lbl_gps_message";
+            // 
+            // lbl_gpssats
+            // 
+            resources.ApplyResources(this.lbl_gpssats, "lbl_gpssats");
+            this.lbl_gpssats.Name = "lbl_gpssats";
             // 
             // but_disablejoystick
             // 
@@ -2610,5 +2631,8 @@
         private System.Windows.Forms.GroupBox groupBoxPitch;
         private System.Windows.Forms.TrackBar trackBarPitch;
         private System.Windows.Forms.TextBox TXT_gimbalPitchPos;
+        private System.Windows.Forms.Label lbl_flight_mode;
+        private System.Windows.Forms.Label lbl_gps_message;
+        private System.Windows.Forms.Label lbl_gpssats;
     }
 }

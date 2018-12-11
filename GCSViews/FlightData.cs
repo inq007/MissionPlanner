@@ -839,6 +839,13 @@ namespace MissionPlanner.GCSViews
             double taketime = 0;
             double timeerror = 0;
 
+            string gps_num;
+            bool have_dual_gps = false;
+            Color labelcolor;
+
+            double gps1_count, gps2_count;
+
+
             while (!IsHandleCreated)
                 Thread.Sleep(1000);
 
@@ -858,6 +865,55 @@ namespace MissionPlanner.GCSViews
                 {
                     threadrun = false;
                     break;
+                }
+
+                //Add extra GPS info display to show GPS1 and GPS2 sat count
+                //Plus add warning message is one of the GPS is
+                //Check if we have dual GPS
+                have_dual_gps = false;
+                gps_num = "";
+                gps1_count = MainV2.comPort.MAV.cs.satcount;
+                gps2_count = MainV2.comPort.MAV.cs.satcount2;
+
+
+                if (MainV2.comPort.MAV.param.ContainsKey("GPS_TYPE2"))
+                {
+                    if (MainV2.comPort.MAV.param["GPS_TYPE2"].Value != 0)
+                    {
+                        have_dual_gps = true;
+                        gps_num = "GPS1: " + gps1_count.ToString() + "  GPS2: " + gps2_count.ToString();
+                        this.Invoke((MethodInvoker)delegate {
+                            if ((gps1_count <= 6) || (gps1_count <= 6))
+                            {
+                                lbl_gpssats.ForeColor = Color.Red;
+                                lbl_gps_message.Text = " Wait for both GPS to achieve at least 7 sats!";
+                                lbl_gps_message.ForeColor = Color.Red;
+                            }
+                            else
+                            {
+                                lbl_gpssats.ForeColor = lbl_sats.ForeColor;
+                                lbl_gps_message.Text = "";
+                            }
+                            lbl_gpssats.Text = gps_num;
+                        });
+
+                    }
+                }
+
+                if (MainV2.comPort.MAV.cs.mode.ToUpper() == "ALTHOLD")
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        lbl_flight_mode.Text = "NON GPS FLIGHT MODE! FLY MANUALLY!";
+                        lbl_flight_mode.ForeColor = Color.Red;
+                    });
+                } else
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        lbl_flight_mode.Text = "";
+                    });
+
                 }
 
                 try
