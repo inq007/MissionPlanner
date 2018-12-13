@@ -4787,7 +4787,7 @@
     <value>Microsoft Sans Serif, 14.25pt, style=Bold</value>
   </data>
   <data name="lbl_gpssats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 25</value>
+    <value>445, 25</value>
   </data>
   <data name="lbl_gpssats.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 24</value>

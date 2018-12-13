@@ -881,12 +881,12 @@ namespace MissionPlanner.GCSViews
                     if (MainV2.comPort.MAV.param["GPS_TYPE2"].Value != 0)
                     {
                         have_dual_gps = true;
-                        gps_num = "GPS1: " + gps1_count.ToString() + "  GPS2: " + gps2_count.ToString();
+                        gps_num = "GPS1: " + gps1_count.ToString() + "\nGPS2: " + gps2_count.ToString();
                         this.Invoke((MethodInvoker)delegate {
                             if ((gps1_count <= 6) || (gps2_count <= 6))
                             {
                                 lbl_gpssats.ForeColor = Color.Red;
-                                lbl_gps_message.Text = " Wait for both GPS to achieve at least 7 sats!";
+                                lbl_gps_message.Text = "Várjon amíg mindkét GPS legalább 7 műholdat lát!";
                                 lbl_gps_message.ForeColor = Color.Red;
                             }
                             else
@@ -904,7 +904,7 @@ namespace MissionPlanner.GCSViews
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        lbl_flight_mode.Text = "NON GPS FLIGHT MODE! FLY MANUALLY!";
+                        lbl_flight_mode.Text = "GPS pozíciótartás nélküli működés! Irányítsa a gépet!";
                         lbl_flight_mode.ForeColor = Color.Red;
                     });
                 } else
